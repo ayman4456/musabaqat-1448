@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دليل المسابقات الطلابية المعتمدة 1448هـ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF3F2;--surface:#FFFFFF;--surface2:#F6F9F8;--ink:#13302E;--muted:#5A6F6C;--line:#D3DEDB;
+  --brand:#0C6A64;--brand-ink:#FFFFFF;--open:#17804A;--soon:#9C6200;--ended:#8C9896;
+  --c-sport:#2F7D34;--c-sci:#1D5EA6;--c-cit:#0C6A64;--c-scout:#6E6A1A;--c-cult:#8B3A6F;
+  --font:"IBM Plex Sans Arabic","Segoe UI",Tahoma,"Noto Sans Arabic",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0E1918;--surface:#152322;--surface2:#1A2B2A;--ink:#E2ECEA;--muted:#9AB0AC;--line:#2A3D3B;
+  --brand:#3AAFA5;--brand-ink:#06201E;--open:#4CC583;--soon:#E0A43A;--ended:#6E807D;
+  --c-sport:#6CC072;--c-sci:#6AA6EE;--c-cit:#3AAFA5;--c-scout:#C5BE52;--c-cult:#D886BD;}}
+:root[data-theme="dark"]{
+  --paper:#0E1918;--surface:#152322;--surface2:#1A2B2A;--ink:#E2ECEA;--muted:#9AB0AC;--line:#2A3D3B;
+  --brand:#3AAFA5;--brand-ink:#06201E;--open:#4CC583;--soon:#E0A43A;--ended:#6E807D;
+  --c-sport:#6CC072;--c-sci:#6AA6EE;--c-cit:#3AAFA5;--c-scout:#C5BE52;--c-cult:#D886BD;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.65}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.wrap{max-width:1280px;margin:0 auto;padding:20px 16px 80px}
+
+/* head */
+.top{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;padding:12px 0 18px;border-bottom:2px solid var(--ink)}
+.top h1{margin:0;font-size:clamp(22px,3.4vw,32px);font-weight:700;letter-spacing:0}
+.top p{margin:4px 0 0;color:var(--muted)}
+.today{font-size:clamp(16px,2vw,19px);font-weight:500;max-width:46ch}
+.today b{color:var(--open)}
+
+/* tabs */
+.tabs{display:flex;gap:4px;margin:18px 0 14px;border-bottom:1px solid var(--line)}
+.tab{background:none;border:0;padding:10px 14px;cursor:pointer;color:var(--muted);font-weight:600;border-bottom:3px solid transparent;margin-bottom:-1px}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--brand)}
+.tab .n{display:inline-block;min-width:22px;padding:0 6px;margin-inline-start:6px;border-radius:11px;background:var(--brand);color:var(--brand-ink);font-size:12px;text-align:center}
+
+/* filters */
+.filters{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:8px;margin-bottom:10px}
+.filters input,.filters select{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;cursor:pointer;font-size:13.5px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-inline-end:6px;vertical-align:middle}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin:6px 0 10px;color:var(--muted);font-size:14px}
+.views{display:flex;gap:4px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 14px;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+
+/* guide table */
+.tablebox{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table.guide{width:100%;border-collapse:collapse;min-width:1080px}
+.guide th{position:sticky;top:0;background:var(--surface2);text-align:start;font-size:13px;color:var(--muted);font-weight:600;padding:10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.guide td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
+.guide tr.sel td{background:color-mix(in srgb,var(--brand) 9%,transparent)}
+.guide tr:last-child td{border-bottom:0}
+.cname{font-weight:700;font-size:15px;line-height:1.45}
+.cname small{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:2px}
+.dom{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-weight:600;font-size:13px}
+.dom i{width:4px;height:16px;border-radius:2px;display:inline-block}
+.st{display:inline-block;font-size:12.5px;font-weight:600;padding:2px 8px;border-radius:6px;margin-top:4px;border:1px solid currentColor}
+.st.open{color:var(--open)}.st.soon{color:var(--soon)}.st.ended{color:var(--ended)}
+.reg div{white-space:nowrap}.reg em{font-style:normal;color:var(--muted);font-size:12.5px}
+.pick{width:20px;height:20px;accent-color:var(--brand);cursor:pointer}
+.tag{display:inline-block;font-size:12px;padding:1px 7px;border-radius:5px;background:var(--surface2);border:1px solid var(--line);margin:3px 0 0 4px;color:var(--muted)}
+.empty{padding:40px 16px;text-align:center;color:var(--muted)}
+
+@media (max-width:820px){
+  .filters{grid-template-columns:1fr 1fr}
+  .filters .q{grid-column:1/-1}
+  table.guide{min-width:0}
+  .guide thead{display:none}
+  .guide tr{display:grid;grid-template-columns:32px 1fr;gap:2px 10px;padding:12px;border-bottom:1px solid var(--line)}
+  .guide td{border:0;padding:2px 0;grid-column:2}
+  .guide td.c-pick{grid-column:1;grid-row:1 / span 3}
+  .guide td[data-l]::before{content:attr(data-l)"： ";color:var(--muted);font-size:12.5px}
+  .guide td.c-name::before{content:none}
+}
+
+/* timeline */
+.tl{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow-x:auto}
+.tl-in{min-width:880px;position:relative}
+.tl-row{display:grid;grid-template-columns:240px 1fr;border-bottom:1px solid var(--line)}
+.tl-row:last-child{border-bottom:0}
+.tl-name{padding:8px 10px;font-size:13.5px;font-weight:600;display:flex;gap:8px;align-items:center}
+.tl-name input{flex:none}
+.tl-track{position:relative;min-height:36px;background-image:repeating-linear-gradient(to left,transparent 0,transparent calc(100%/12 - 1px),var(--line) calc(100%/12 - 1px),var(--line) calc(100%/12))}
+.tl-head .tl-track{display:grid;grid-template-columns:repeat(12,1fr);background:none}
+.tl-head .tl-track span{font-size:12px;color:var(--muted);text-align:center;padding:8px 2px;border-inline-start:1px solid var(--line)}
+.tl-bar{position:absolute;top:9px;height:18px;border-radius:4px;min-width:6px;opacity:.9}
+.tl-bar.ended{opacity:.35}
+.tl-now{position:absolute;top:0;bottom:0;width:2px;background:var(--open);z-index:2;pointer-events:none}
+.tl-now::after{content:"اليوم";position:absolute;top:2px;inset-inline-start:4px;font-size:11px;color:var(--open);font-weight:700;white-space:nowrap}
+
+/* plan */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px}
+.panel h2{margin:0 0 10px;font-size:17px}
+.form{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.form label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
+.form input,.form select{padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface2);color:var(--ink);font-size:14.5px}
+@media (max-width:820px){.form{grid-template-columns:1fr}}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.hint{color:var(--muted);font-size:13.5px;margin:0}
+
+.sheetbox{overflow-x:auto}
+.sheet{background:#fff;color:#111;width:100%;min-width:980px;padding:22px 26px;border:1px solid var(--line);border-radius:4px;font-size:13px;line-height:1.5}
+.sh-head{display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:12px;background:#E4F3E8;border:1px solid #BFDFC9;border-radius:6px;padding:12px 18px;min-height:96px}
+.sh-logo{justify-self:start;align-self:start;text-align:center;color:#0B5A3C;line-height:1.25}
+.sh-logo img{max-height:70px;max-width:150px;display:block}
+.sh-logo b{display:block;font-size:16px}.sh-logo span{font-size:9px}
+.sh-org{text-align:center;font-weight:600;font-size:14.5px;line-height:1.8;color:#14352A}
+.sh-org .school{font-size:16px;font-weight:700;color:#0B5A3C}
+.sh-title{text-align:center;margin:16px 0 12px}
+.sh-title h2{margin:0 0 4px;font-size:22px;color:#0B5A3C}
+.sh-title p{margin:0;font-size:14.5px;color:#333;line-height:1.7}
+table.plan{width:100%;border-collapse:collapse}
+.plan th,.plan td{border:1px solid #9FB3B0;padding:6px 7px;text-align:center;vertical-align:middle}
+.plan th{background:#E4F3E8;font-weight:700;font-size:12.5px}
+.plan td.tn{text-align:right;font-weight:600}
+.ed{min-width:60px;min-height:18px;display:block;outline:0;border-radius:3px}
+.ed:empty::before{content:attr(data-ph);color:#A0A8A7}
+.ed:focus{background:#FFF8E1}
+.sh-sign{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:26px;text-align:center}
+.sh-sign div{line-height:2.2}
+.sh-sign b{display:block}
+.noplan{padding:30px;text-align:center;color:var(--muted)}
+
+/* toast */
+.toast{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));inset-inline-start:50%;transform:translateX(50%);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:8px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
+.toast.show{opacity:1}
+.dpk{display:block;width:100%;min-width:88px;background:none;border:1px dashed #9FB3B0;border-radius:5px;padding:4px 3px;cursor:pointer;color:#111;font:inherit;line-height:1.35}
+.dpk.empty{color:#8A9593}
+.dpk small{display:block;font-size:11px;color:#4D6360}
+.dpk.flat{border:0;padding:0}
+.modal{position:fixed;inset:0;background:rgba(8,26,26,.5);z-index:15;display:flex;align-items:flex-end;justify-content:center}
+@media (min-width:700px){.modal{align-items:center}}
+.mbox{background:var(--surface);color:var(--ink);width:min(560px,100%);max-height:88vh;display:flex;flex-direction:column;border-radius:14px 14px 0 0;padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (min-width:700px){.mbox{border-radius:12px}}
+.mhead{padding:14px 16px 8px;border-bottom:1px solid var(--line)}
+.mhead h3{margin:0;font-size:16px}.mhead p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.mtabs{display:flex;gap:6px;margin-top:10px}
+.mbody{overflow-y:auto;padding:10px 12px}
+.wk{border:1px solid var(--line);border-radius:9px;margin-bottom:6px;overflow:hidden}
+.wk>button{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;background:var(--surface2);border:0;padding:9px 12px;cursor:pointer;text-align:start}
+.wk>button b{font-size:14.5px}.wk>button span{font-size:12.5px;color:var(--muted)}
+.wk.cur>button{background:color-mix(in srgb,var(--brand) 14%,var(--surface2))}
+.etag{font-size:11.5px;font-weight:600;color:var(--soon);border:1px solid currentColor;border-radius:5px;padding:0 6px;margin-inline-start:6px}
+.days{display:grid;gap:4px;padding:8px}
+.day{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:8px 10px;cursor:pointer;text-align:start}
+.day:hover:not(:disabled){border-color:var(--brand)}
+.day.on{border-color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,var(--surface));font-weight:700}
+.day:disabled{opacity:.55;cursor:not-allowed}
+.day em{font-style:normal;font-size:12px;color:var(--muted)}
+.brk{text-align:center;font-size:12.5px;color:var(--muted);background:repeating-linear-gradient(45deg,transparent 0 6px,var(--line) 6px 7px);border-radius:7px;padding:6px;margin:4px 0 10px}
+.mfoot{display:flex;gap:8px;justify-content:space-between;padding:10px 12px;border-top:1px solid var(--line)}
+.calpick{display:grid;gap:10px;padding:6px 2px}
+.calpick button{text-align:start;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--surface2);cursor:pointer}
+.calpick b{display:block;font-size:15px}.calpick span{font-size:13px;color:var(--muted)}
+.busy{position:fixed;inset:0;background:rgba(10,30,30,.45);display:flex;align-items:center;justify-content:center;z-index:20;color:#fff;font-weight:600;font-size:16px}
+.shot{position:fixed;top:0;left:-20000px;background:#fff;direction:rtl}
+.fab{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));inset-inline-end:14px;z-index:5;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* execution card (mirrors the ministry PPTX template, A4 portrait) */
+.cardsbox{overflow:hidden}
+.card{width:210mm;height:297mm;background:#fff;color:#003845;margin:0 auto 18px;position:relative;padding:7.7mm 10.8mm 0 9.8mm;font-family:"IBM Plex Sans Arabic","Sakkal Majalla",Tahoma,sans-serif;box-shadow:0 2px 14px rgba(0,40,50,.16);overflow:hidden}
+.cd-logo{position:absolute;top:7.7mm;left:8.8mm;width:30mm;text-align:center;line-height:1.25;color:#003845}
+.cd-logo b{display:block;font-size:12pt}
+.cd-logo span{font-size:7pt;letter-spacing:.2px}
+.cd-title{margin:15.5mm 0 3mm;text-align:center;font-size:18pt;font-weight:700;color:#003744}
+table.ct{width:100%;border-collapse:collapse;table-layout:fixed}
+.ct td{border:1px solid #003845;padding:.6mm 1.6mm;text-align:center;vertical-align:middle;font-size:11pt;line-height:1.35}
+.ct tr:nth-child(even) td{background:#D2E2E8}
+.ct td.lb{font-weight:700;font-size:12pt}
+.ct td.sm{font-size:10pt;text-align:right}
+.ct td.sl{font-size:10.5pt}
+.ce{display:block;min-height:1.3em;outline:0;border-radius:2px}
+.ce.inl{display:inline-block;min-width:8mm}
+.ce:focus{background:#FFF6CC}
+.ce.auto{color:#0B5F55}
+.dpc{cursor:pointer}
+.dpc:hover{background:#FFF6CC!important}
+.dpc .cv{color:#0B5F55}
+.pickhint{color:#9AA7A5;font-size:9.5pt}
+.sdp{background:none;border:0;border-bottom:1px dashed #8FB0AC;padding:0 2px;font:inherit;color:#0B5F55;cursor:pointer;min-width:30mm;text-align:start}
+.cd-sign{display:flex;justify-content:space-between;margin:9mm 4mm 0;font-size:12pt;line-height:1.9}
+.cd-sign div{min-width:62mm}
+.cd-sign b{display:block;font-weight:700}
+.cd-note{margin:7mm 0 0;padding-inline-start:5mm;font-size:10.5pt;line-height:1.6;position:relative}
+.cd-note::before{content:"•";position:absolute;inset-inline-start:0}
+.cd-foot{position:absolute;bottom:0;left:17.5mm;right:0;height:6mm;background:url(data:image/png;base64,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) left bottom/100% 100% no-repeat}
+
+@page planp{size:A4 landscape;margin:10mm}
+@page cardp{size:A4 portrait;margin:0}
+@media print{
+  body{background:#fff}
+  .noprint,.top,.tabs,#guideView,.fab,.toast{display:none!important}
+  .wrap{padding:0;max-width:none}
+  body[data-p="plan"] #planView{display:block!important}
+  body[data-p="plan"] #cardView{display:none!important}
+  body[data-p="card"] #planView{display:none!important}
+  body[data-p="card"] #cardView{display:block!important}
+  .sheet{page:planp}
+  .card{page:cardp;zoom:1!important;margin:0;box-shadow:none;break-after:page}
+  .card:last-child{break-after:auto}
+  .ce:focus{background:none}.ce.auto{color:#003845}
+  .dpk{border:0;padding:0}.dpk.empty{visibility:hidden}
+  .pickhint{visibility:hidden}.sdp{border:0}.dpc .cv{color:#003845}
+  .cardsbox{overflow:visible}
+  .sheetbox{overflow:visible}
+  .sheet{border:0;padding:0;min-width:0}
+  .ed:empty::before{content:""}
+  .plan tr{break-inside:avoid}
+}
+
+/* ===== visual refresh ===== */
+:root{--radius:14px;--shadow:0 1px 2px rgba(10,40,40,.06),0 6px 20px rgba(10,40,40,.06)}
+body{background:var(--paper);-webkit-tap-highlight-color:transparent}
+.wrap{padding-top:16px}
+.hero{position:relative;overflow:hidden;display:flex;flex-wrap:wrap;gap:18px 28px;align-items:flex-end;justify-content:space-between;border:0;border-radius:20px;padding:26px 26px 22px;color:#EAF6F3;
+  background:radial-gradient(120% 140% at 100% 0%,#14807A 0%,#0C5B57 45%,#083B3A 100%)}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.2px);background-size:16px 16px;mask-image:linear-gradient(to left,#000,transparent 70%);pointer-events:none}
+.hero>*{position:relative;z-index:1}
+.eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.2px;color:#A9E3D8;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:3px 10px;border-radius:999px}
+.hero h1{margin:10px 0 6px;font-size:clamp(24px,4vw,36px);line-height:1.25;color:#fff}
+.hero .today{margin:0;color:#CFE9E3;font-size:clamp(14px,1.8vw,16.5px);max-width:52ch}
+.hero .today b{color:#FFD98A}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(88px,1fr));gap:8px}
+.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:10px 12px;text-align:center;min-width:88px}
+.stat b{display:block;font-size:24px;line-height:1.1;color:#fff}
+.stat span{font-size:12px;color:#BFE3DB}
+.tabs{border-bottom:1px solid var(--line);margin:18px 0 16px}
+.tab{display:inline-flex;align-items:center;gap:7px;border-radius:10px 10px 0 0}
+.tab svg{opacity:.75}
+.tab[aria-selected="true"] svg{opacity:1;color:var(--brand)}
+.filters{grid-template-columns:minmax(220px,1.3fr) 2fr}
+.fsel{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.filters input,.filters select{padding:10px 12px;border-radius:10px;min-height:42px}
+.chip{padding:6px 13px}
+.tablebox,.panel,.tl{border-radius:var(--radius);box-shadow:var(--shadow)}
+.guide th{background:var(--surface2)}
+.guide tbody tr:hover td{background:color-mix(in srgb,var(--brand) 5%,transparent)}
+.btn{border-radius:10px;min-height:40px;transition:background .15s,border-color .15s}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--muted)}
+.infop>summary{list-style:none;display:flex;align-items:baseline;justify-content:space-between;gap:10px;cursor:pointer}
+.infop>summary::-webkit-details-marker{display:none}
+.infop>summary h2{margin:0}
+.infop[open]>summary{margin-bottom:12px}
+.sumhint{font-size:12px;color:var(--muted)}
+.stickyact{margin:0 0 14px}
+.prevlbl{margin:6px 0 8px;font-size:13px;color:var(--muted);font-weight:600}
+.plist{display:none}
+.mlist{display:none}
+
+/* mobile cards */
+.mc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;position:relative}
+.mc::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:4px;background:var(--dc)}
+.mc.sel{border-color:var(--brand);box-shadow:0 0 0 2px color-mix(in srgb,var(--brand) 30%,transparent)}
+.mc-h{padding:12px 14px 4px 14px;padding-inline-start:16px}
+.mc-dom{font-size:12px;font-weight:700;color:var(--dc)}
+.mc h3{margin:2px 0 4px;font-size:16px;line-height:1.45}
+.mc .st{margin:0}
+.mc-g{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line);margin-top:10px}
+.mc-g div{background:var(--surface);padding:8px 12px}
+.mc-g dt{font-size:11.5px;color:var(--muted)}
+.mc-g dd{margin:0;font-size:13.5px;font-weight:500;line-height:1.45}
+.mc-g .reg div{white-space:normal}
+.mc details{border-top:1px solid var(--line);padding:0 14px}
+.mc summary{cursor:pointer;padding:9px 0;font-size:13px;color:var(--brand);font-weight:600}
+.mc details p{margin:0 0 10px;font-size:13px;line-height:1.7}
+.mc details p b{color:var(--muted);font-weight:600}
+.mc-add{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;border:0;border-top:1px solid var(--line);background:var(--surface2);padding:11px;font-weight:700;color:var(--brand);cursor:pointer;font:inherit;font-weight:700}
+.mc.sel .mc-add{background:var(--brand);color:var(--brand-ink)}
+
+/* mobile plan editor */
+.pi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:12px 14px;margin-bottom:10px}
+.pi h4{margin:0 0 2px;font-size:15px}
+.pi .mc-dom{display:block;margin-bottom:8px}
+.pi-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.pi-g>*{min-width:0}.pi-g input{width:100%;min-width:0}
+.pi-g label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+.pi-g input{padding:9px 10px;border:1px solid var(--line);border-radius:9px;background:var(--surface2);color:var(--ink);font-size:14.5px}
+.pi .dpk{border:1px solid var(--line);background:var(--surface2);border-radius:9px;color:var(--ink);padding:8px 10px;text-align:start;min-height:42px}
+.pi .dpk small{color:var(--muted)}
+.pi-a{display:flex;justify-content:flex-end;margin-top:10px}
+
+@media (max-width:820px){
+  body{font-size:15px}
+  .wrap{overflow-x:clip}
+  .hero{gap:12px}
+  .eyebrow{font-size:11.5px}
+  .hero h1{font-size:24px;margin:8px 0 4px}
+  .stat{padding:7px 6px;min-width:0}.stat b{font-size:20px}.stat span{font-size:11px}
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .filters input,.filters select{width:100%}
+  .fsel select{width:auto}
+  .wrap{padding:10px 12px calc(84px + env(safe-area-inset-bottom,0px))}
+  .hero{padding:20px 18px 18px;border-radius:18px}
+  .stats{width:100%}
+  .tabs{position:fixed;z-index:12;bottom:0;left:0;right:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);border-bottom:0;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}
+  .tab{flex-direction:column;gap:2px;padding:6px 2px;font-size:11.5px;border:0;border-radius:10px;margin:0;position:relative}
+  .tab[aria-selected="true"]{background:color-mix(in srgb,var(--brand) 12%,transparent);color:var(--brand)}
+  .tab .n{position:absolute;top:2px;inset-inline-end:calc(50% - 26px);margin:0;font-size:11px;min-width:18px}
+  .fab{display:none!important}
+  .filters{grid-template-columns:1fr;margin-top:14px}
+  .fsel{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .fsel::-webkit-scrollbar,.chips::-webkit-scrollbar{display:none}
+  .fsel select{min-width:150px;flex:0 0 auto}
+  .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-12px;padding-inline:12px}
+  .chip{flex:0 0 auto}
+  .tablebox{display:none}
+  .mlist{display:grid;gap:12px}
+  .plist{display:block}
+  .prevlbl{display:block}
+  .stickyact{position:sticky;top:0;z-index:5;background:var(--paper);padding:8px 0;margin:0 0 8px;flex-wrap:nowrap;overflow-x:auto}
+  .stickyact .btn{flex:0 0 auto}
+  .panel{padding:14px}
+}
+@media (min-width:821px){.prevlbl{display:none}}
+@media print{.hero,.stats{display:none!important}.sheet{zoom:1!important}}
+
+/* credit footer */
+.credit{margin:48px auto 8px;text-align:center;max-width:520px;padding:0 12px}
+.credit-line{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.credit-line span{flex:1;height:1px;background:linear-gradient(to left,transparent,var(--line) 30%,var(--line) 70%,transparent)}
+.credit-line svg{width:46px;height:46px;flex:none;animation:credSpin 40s linear infinite}
+@keyframes credSpin{to{transform:rotate(360deg)}}
+.credit p{margin:0}
+.credit-pre{font-size:14px;color:var(--muted);font-weight:600}
+.credit-name{font-size:clamp(24px,5vw,30px);font-weight:700;line-height:1.35;margin:2px 0 4px!important;
+  background:linear-gradient(100deg,#0C6A64 0%,#14807A 35%,#C9A04A 70%,#0C6A64 100%);background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:credShine 7s ease-in-out infinite}
+@keyframes credShine{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.credit-role{display:inline-block;font-size:13px;font-weight:600;color:var(--brand);border:1px solid color-mix(in srgb,var(--brand) 35%,transparent);background:color-mix(in srgb,var(--brand) 7%,transparent);padding:3px 14px;border-radius:999px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .credit-name{background-image:linear-gradient(100deg,#5BC9BE 0%,#8FE0D6 35%,#E6C47A 70%,#5BC9BE 100%)}}
+:root[data-theme="dark"] .credit-name{background-image:linear-gradient(100deg,#5BC9BE 0%,#8FE0D6 35%,#E6C47A 70%,#5BC9BE 100%)}
+@media (prefers-reduced-motion:reduce){.credit-line svg,.credit-name{animation:none}}
+@media (max-width:820px){.credit{margin-top:36px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top hero">
+    <div class="hero-txt">
+      <span class="eyebrow">الإدارة العامة للنشاط الطلابي · العام الدراسي 1448هـ</span>
+      <h1>المسابقات الطلابية المعتمدة</h1>
+      <p class="today" id="today"></p>
+    </div>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <nav class="tabs noprint" role="tablist">
+    <button class="tab" role="tab" id="tGuide" aria-selected="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg><span>دليل المسابقات</span></button>
+    <button class="tab" role="tab" id="tPlan" aria-selected="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>خطة التنفيذ</span><span class="n" id="selCount">0</span></button>
+    <button class="tab" role="tab" id="tCard" aria-selected="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M8 15h3"/></svg><span>بطاقة التنفيذ</span></button>
+  </nav>
+
+  <!-- GUIDE -->
+  <section id="guideView">
+    <div class="filters">
+      <input class="q" id="q" type="search" placeholder="ابحث باسم المسابقة أو الجهة المنظمة">
+      <div class="fsel">
+      <select id="fStage" aria-label="المرحلة">
+        <option value="">كل المراحل</option><option value="k">رياض الأطفال</option><option value="p">الابتدائية</option><option value="m">المتوسطة</option><option value="s">الثانوية</option>
+      </select>
+      <select id="fStatus" aria-label="حالة التسجيل">
+        <option value="">كل حالات التسجيل</option><option value="open">مفتوح الآن</option><option value="soon">لم يبدأ بعد</option><option value="ended">انتهى</option>
+      </select>
+      <select id="fApply" aria-label="آلية التقديم">
+        <option value="">كل آليات التقديم</option><option value="raed">ترشيح عبر رائد النشاط/المدرسة</option><option value="self">تسجيل ذاتي من الطالب</option><option value="edu">ترشيح من إدارة التعليم</option>
+      </select>
+      </div>
+    </div>
+    <div class="chips" id="domChips"></div>
+    <div class="bar">
+      <span id="resultInfo"></span>
+      <div class="views">
+        <button class="btn" id="vTable" aria-pressed="true">جدول</button>
+        <button class="btn" id="vTime" aria-pressed="false">خط زمني</button>
+      </div>
+    </div>
+    <div id="guideBody"></div>
+  </section>
+
+  <!-- PLAN -->
+  <section id="planView" hidden>
+    <details class="panel noprint infop" id="infoPanel" open>
+      <summary><h2>بيانات الترويسة والتقويم</h2><span class="sumhint">اضغط للطي أو الفتح</span></summary>
+      <div class="form">
+        <label>الإدارة العامة للتعليم بـ<input id="iRegion" placeholder="منطقة مكة المكرمة"></label>
+        <label>مكتب التعليم (اختياري)<input id="iOffice" placeholder="مكتب التعليم بـ..."></label>
+        <label>اسم المدرسة<input id="iSchool" placeholder="مدرسة ..."></label>
+        <label>المرحلة
+          <select id="iStage"><option value="">—</option><option>الابتدائية</option><option>المتوسطة</option><option>الثانوية</option><option>رياض الأطفال</option></select>
+        </label>
+        <label>رائد النشاط<input id="iRaed" placeholder="الاسم"></label>
+        <label>مدير المدرسة<input id="iManager" placeholder="الاسم"></label>
+        <label>الفصل الدراسي
+          <select id="iTerm"><option value="">—</option><option>الأول</option><option>الثاني</option><option>الثالث</option></select>
+        </label>
+        <label>شعار وزارة التعليم (صورة PNG أو JPG)<input type="file" id="iLogo" accept="image/*"></label>
+        <label>التقويم الدراسي المعتمد
+          <select id="iCal"><option value="">— اختر التقويم —</option><option value="west">مكة المكرمة، المدينة المنورة، جدة، الطائف</option><option value="gen">جميع المناطق ماعدا الإدارات المستثناة</option></select>
+        </label>
+      </div>
+      <p class="hint">اختر التقويم الدراسي أولًا، ثم اضغط خانة «بداية التنفيذ» أو «نهاية التنفيذ» لاختيار الفصل والأسبوع واليوم من التقويم المعتمد. اكتب المعلم المنفذ وعدد الطلاب مباشرة في الجدول، وكلها تنتقل تلقائيًا إلى بطاقة التنفيذ. كل شيء يُحفظ في هذا المتصفح.</p>
+    </details>
+    <div class="actions noprint stickyact">
+      <button class="btn primary" id="pdfPlan">حفظ الخطة PDF</button>
+      <button class="btn" id="printBtn">طباعة</button>
+      <button class="btn" id="toCards">بطاقات التنفيذ</button>
+      <button class="btn ghost" id="clearSel">إفراغ الخطة</button>
+    </div>
+    <div id="planList" class="plist noprint"></div>
+    <p class="prevlbl noprint">معاينة الخطة كما ستُطبع</p>
+    <div class="sheetbox"><div class="sheet" id="sheet"></div></div>
+  </section>
+
+  <!-- CARD -->
+  <section id="cardView" hidden>
+    <div class="panel noprint">
+      <h2>بطاقة تنفيذ مسابقة نشاط طلابي</h2>
+      <div class="form">
+        <label>المسابقة<select id="cSel"></select></label>
+      </div>
+      <div class="actions">
+        <button class="btn primary" id="pdfCard">حفظ البطاقة PDF</button>
+        <button class="btn" id="cPrint">طباعة</button>
+        <button class="btn" id="cReset">إعادة تعبئة البيانات من الخطة</button>
+      </div>
+      <p class="hint">الخانات ذات اللون الأخضر مأخوذة من الخطة تلقائيًا. اضغط على أي خانة لتعديلها أو تعبئتها، ويُحفظ التعديل لهذه البطاقة.</p>
+    </div>
+    <div class="cardsbox" id="cards"></div>
+  </section>
+
+  <footer class="credit noprint" aria-label="تصميم وإعداد">
+    <div class="credit-line"><span></span><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6C47A"/><stop offset="1" stop-color="#14807A"/></linearGradient></defs><g fill="none" stroke="url(#sg)" stroke-width="2.2" stroke-linejoin="round"><rect x="14" y="14" width="36" height="36" rx="2"/><rect x="14" y="14" width="36" height="36" rx="2" transform="rotate(45 32 32)"/><circle cx="32" cy="32" r="9"/></g><circle cx="32" cy="32" r="3.2" fill="url(#sg)"/></svg><span></span></div>
+    <p class="credit-pre">تصميم وإعداد رائد النشاط:</p>
+    <p class="credit-name">أيمن الصاعدي</p>
+  </footer>
+</div>
+
+<button class="btn primary fab noprint" id="fab" hidden>إنشاء الخطة (<span id="fabN">0</span>)</button>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const DOMS={
+  cit:{n:"المواطنة والحياة",c:"var(--c-cit)"},
+  cult:{n:"الثقافة والفنون",c:"var(--c-cult)"},
+  sci:{n:"العلوم والتقنية",c:"var(--c-sci)"},
+  sport:{n:"الرياضة والصحة",c:"var(--c-sport)"},
+  scout:{n:"المجال الكشفي",c:"var(--c-scout)"}
+};
+const ORDER=Object.keys(DOMS);
+const NA="وزارة التعليم (الإدارة العامة للنشاط الطلابي)";
+const MW="وزارة التعليم (الإدارة العامة لبرامج الموهوبين)";
+const R=(s,e,l)=>({s,e:e||s,l:l||"",single:!e});
+const ALL=[
+// الرياضة والصحة
+{id:"sp1",dom:"sport",n:"دورة الألعاب الأولمبية المدرسية الأولى",stage:"الابتدائية، المتوسطة",g:"بنين",tags:["p","m"],grades:"من الرابع الابتدائي إلى الثالث المتوسط",level:"مدرسي، إدارة تعليم",reg:[R("1448/07/23","1448/10/23")],apply:"ترشيح من إدارة التعليم",ak:"edu",org:"الاتحاد السعودي للرياضة المدرسية",ok:"sport",type:"فردية، جماعية",mode:"حضورية"},
+{id:"sp2",dom:"sport",n:"دوري المشي للمدارس",stage:"المتوسطة، الثانوية",g:"بنين وبنات",tags:["m","s"],grades:"من الأول المتوسط إلى الثالث الثانوي",level:"مدرسي، إدارة تعليم، وطني",reg:[R("1448/08/16","1448/09/25")],apply:"تسجيل ذاتي من الطالب (تطبيق تحدي المشي – قسم الفعاليات)",ak:"self",org:NA,ok:"nashat",type:"فردية",mode:"افتراضية"},
+{id:"sp3",dom:"sport",n:"المسابقة الثقافية الرياضية",stage:"الثانوية",g:"بنين وبنات",tags:["s"],grades:"من الأول الثانوي إلى الثالث الثانوي",level:"مدرسي، إدارة تعليم، وطني",reg:[R("1448/10/13","1448/10/17")],apply:"ترشيح من المدرسة (من خلال رائد النشاط)",ak:"raed",org:NA+"، الاتحاد السعودي للثقافة الرياضية",ok:"nashat",type:"جماعية",mode:"حضورية، افتراضية"},
+{id:"sp4",dom:"sport",n:"دوري المدارس للرياضات الإلكترونية",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"من الرابع الابتدائي إلى الثالث الثانوي",level:"مدرسي، إدارة تعليم، وطني",reg:[R("1448/10/20","1448/10/24")],apply:"ترشيح من المدرسة (من خلال رائد النشاط)",ak:"raed",org:NA+"، الاتحاد السعودي للرياضات الإلكترونية",ok:"nashat",type:"فردية",mode:"حضورية، افتراضية"},
+{id:"sp5",dom:"sport",n:"دوري المدارس لكرة القدم والألعاب المختلفة",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"وطني",reg:[R("1448/03/19","1448/11/23")],apply:"ترشيح من إدارة التعليم",ak:"edu",org:"الاتحاد السعودي للرياضة المدرسية",ok:"sport",type:"فردية، جماعية",mode:"حضورية"},
+{id:"sp6",dom:"sport",n:"دوري المدارس لألعاب القوى",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"وطني",reg:[R("1448/04/19")],apply:"ترشيح من إدارة التعليم",ak:"edu",org:"الاتحاد السعودي للرياضة المدرسية",ok:"sport",type:"فردية",mode:"حضورية"},
+{id:"sp7",dom:"sport",n:"مسابقة الحي يحييك",stage:"المتوسطة، الثانوية",g:"بنين وبنات",tags:["m","s"],grades:"من الأول المتوسط إلى الثالث الثانوي",level:"إدارة تعليم (المنطقة الشرقية)",reg:[R("1448/05/11","1448/08/25")],apply:"ترشيح من المدرسة",ak:"raed",org:"الإدارة العامة للتعليم بالمنطقة الشرقية",ok:"region",region:"الشرقية",type:"فردية، جماعية",mode:"حضورية، افتراضية"},
+{id:"sp8",dom:"sport",n:"دوري أبطال الرياضة المدرسية للطلاب ذوي الإعاقة الفكرية والنمائية",stage:"المتوسطة، الثانوية (ذوو الإعاقة الفكرية والنمائية)",g:"بنين وبنات",tags:["m","s"],grades:"من الأول المتوسط إلى الثالث الثانوي",level:"إدارة تعليم (منطقة تبوك)",reg:[R("1448/05/14","1448/05/18")],apply:"ترشيح من المدرسة",ak:"raed",org:"الإدارة العامة للتعليم بمنطقة تبوك",ok:"region",region:"تبوك",type:"جماعية",mode:"حضورية"},
+{id:"sp9",dom:"sport",n:"الماراثون الرياضي (أهلًا بالعالم)",stage:"الطفولة المبكرة (رياض الأطفال)",g:"بنين وبنات",tags:["k"],grades:"رياض الأطفال",level:"إدارة تعليم (المنطقة الشرقية)",reg:[R("1448/10/19","1448/11/08")],apply:"ترشيح من المدرسة (من خلال إدارة الروضة)",ak:"raed",org:"الإدارة العامة للتعليم بالمنطقة الشرقية",ok:"region",region:"الشرقية",type:"جماعية",mode:"حضورية"},
+// العلوم والتقنية
+{id:"sc1",dom:"sci",n:"معرض ومسابقة الأمن والابتكار العالمية (سيف)",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"وطني، دولي",reg:[R("1448/02/08","1448/04/17")],apply:"تسجيل ذاتي من الطالب (موقع سيف)",ak:"self",org:MW+"، الجهات المنظمة لمعرض سيف",ok:"mawhoob",type:"فردية، جماعية",mode:"حضورية، افتراضية"},
+{id:"sc2",dom:"sci",n:"أولمبياد الموهبة الوطني",stage:"المتوسطة، الثانوية",g:"بنين وبنات",tags:["m","s"],grades:"نسمو: من الأول المتوسط إلى الأول الثانوي؛ إبداع: من الأول المتوسط إلى الثالث الثانوي",level:"وطني",reg:[R("1448/03/07","1448/04/19")],apply:"نسمو: ترشيح من المدرسة؛ إبداع: تسجيل ذاتي (موقع موهبة)",ak:"raed self",org:MW+"، مؤسسة موهبة",ok:"mawhoob",type:"فردية، جماعية",mode:"حضورية، افتراضية"},
+{id:"sc3",dom:"sci",n:"مسابقة كاوست للرياضيات",stage:"المتوسطة، الثانوية",g:"بنين وبنات",tags:["m","s"],grades:"من الثاني المتوسط إلى الثاني الثانوي",level:"وطني",reg:[R("1448/04/20","1448/05/29")],apply:"تسجيل ذاتي من الطالب (موقع أكاديمية كاوست)",ak:"self",org:MW+"، جامعة الملك عبدالله (أكاديمية كاوست)",ok:"mawhoob",type:"فردية",mode:"حضورية"},
+{id:"sc4",dom:"sci",n:"مسابقة سافي للتعلم عبر اللعب",stage:"المتوسطة، الثانوية",g:"بنين وبنات",tags:["m","s"],grades:"من الأول المتوسط إلى الثالث الثانوي",level:"وطني",reg:[R("1448/04/20","1448/08/20")],apply:"ترشيح من المدرسة",ak:"raed",org:MW+"، مجموعة سافي",ok:"mawhoob",type:"جماعية",mode:"حضورية، افتراضية"},
+{id:"sc5",dom:"sci",n:"مسابقة الفضاء مداك 2",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"الفنون: 6–11 عامًا؛ العلوم: 12–14؛ الهندسة: 15–18",level:"عربي",reg:[R("1447/10/24","1447/12/13")],apply:"تسجيل ذاتي من الطالب (موقع وكالة الفضاء السعودية)",ak:"self",org:NA+"، وكالة الفضاء السعودية",ok:"nashat",type:"فردية",mode:"حضورية، افتراضية"},
+{id:"sc6",dom:"sci",n:"الأولمبياد العالمي للروبوت WRO",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"الفئة العمرية من 8 إلى 22 عامًا",level:"وطني، دولي",reg:[R("1448/04/13","1448/04/24")],apply:"ترشيح من المدرسة",ak:"raed",org:MW+"، موهبة، المنظم الوطني لـ WRO",ok:"mawhoob",type:"جماعية",mode:"حضورية، افتراضية"},
+{id:"sc7",dom:"sci",n:"فيرست ليغو",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"الاستكشاف: 6–10 أعوام؛ التحدي: 9–16 عامًا",level:"وطني، دولي",reg:[R("1448/06/21","1448/08/23","الوطني"),R("1448/10/16","1448/10/25","الدولي")],apply:"ترشيح من المدرسة",ak:"raed",org:MW+"، FIRST Saudi Arabia",ok:"mawhoob",type:"جماعية",mode:"حضورية، افتراضية"},
+{id:"sc8",dom:"sci",n:"مسابقة Robo G",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"وطني",reg:[R("1448/03/01","1448/07/01")],apply:"ترشيح من المدرسة (من خلال رائد النشاط)",ak:"raed",org:NA+"، الاتحاد السعودي للروبوتات والرياضات اللاسلكية",ok:"nashat",type:"فردية، جماعية",mode:"حضورية"},
+{id:"sc9",dom:"sci",n:"مسابقة كانجارو موهبة للرياضيات",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"من الثالث الابتدائي إلى الثالث الثانوي",level:"دولي (يُنفذ محليًا)",reg:[R("1448/08/24","1448/10/23")],apply:"تسجيل ذاتي من الطالب (موقع موهبة)",ak:"self",org:MW+"، موهبة",ok:"mawhoob",type:"فردية",mode:"افتراضية"},
+{id:"sc10",dom:"sci",n:"مسابقة بيبراس موهبة للمعلوماتية",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"من الثالث الابتدائي إلى الثالث الثانوي",level:"دولي (يُنفذ محليًا)",reg:[R("1448/04/25","1448/06/12")],apply:"تسجيل ذاتي من الطالب (موقع موهبة)",ak:"self",org:MW+"، موهبة، منظمة بيبراس الدولية",ok:"mawhoob",type:"فردية",mode:"افتراضية"},
+// المواطنة والحياة
+{id:"ci1",dom:"cit",n:"مسابقة القرآن الكريم",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"إدارة تعليم",reg:[R("1448/04/16","1448/04/27")],apply:"ترشيح من المدرسة (من خلال رائد النشاط)",ak:"raed",org:NA,ok:"nashat",type:"فردية",mode:"حضورية، افتراضية"},
+{id:"ci2",dom:"cit",n:"جائزة الأميرة صيتة للتميز في العمل الاجتماعي",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"المواطنة المسؤولة: جميع الصفوف؛ صيتاثون: من الأول إلى الثالث الثانوي",level:"إدارة تعليم، وطني",reg:[R("1448/04/20","1448/07/11")],apply:"المواطنة المسؤولة: تسجيل ذاتي (موقع الجائزة)؛ صيتاثون: ترشيح عبر رائد النشاط",ak:"raed self",org:NA+"، مؤسسة الأميرة صيتة بنت عبدالعزيز",ok:"nashat",type:"فردية، جماعية",mode:"حضورية، افتراضية"},
+{id:"ci3",dom:"cit",n:"مسابقة السلامة المرورية (سلامتنا)",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"مدرسي، إدارة تعليم",reg:[R("1448/04/20","1448/11/08")],apply:"ترشيح من المدرسة (من خلال رائد النشاط)",ak:"raed",org:NA,ok:"nashat",type:"فردية",mode:"حضورية، افتراضية"},
+{id:"ci4",dom:"cit",n:"نزاهة (للتثقيف بقيم النزاهة ومكافحة الفساد)",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"مدرسي، إدارة تعليم",reg:[R("1448/05/23","1448/06/29")],apply:"ترشيح من المدرسة (من خلال رائد النشاط)",ak:"raed",org:NA,ok:"nashat",type:"فردية",mode:"حضورية، افتراضية"},
+{id:"ci5",dom:"cit",n:"برنامج المعرفة الإحصائية",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"من الرابع الابتدائي إلى الثالث الثانوي",level:"إدارة تعليم",reg:[R("1448/04/30","1448/05/11")],apply:"تسجيل ذاتي من الطالب (موقع الهيئة العامة للإحصاء)",ak:"self",org:NA+"، الهيئة العامة للإحصاء",ok:"nashat",type:"فردية",mode:"افتراضية"},
+{id:"ci6",dom:"cit",n:"الوعي المالي والادخار (ريالي)",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"مدرسي، إدارة تعليم، وطني",reg:[R("1448/06/21")],apply:"تسجيل ذاتي من الطالب (موقع ريالي)",ak:"self",org:NA+"، مؤسسة ريالي",ok:"nashat",type:"فردية، جماعية",mode:"افتراضية"},
+{id:"ci7",dom:"cit",n:"أولمبياد التاريخ الوطني",stage:"الثانوية",g:"بنين وبنات",tags:["s"],grades:"الأول الثانوي، الثاني الثانوي",level:"إدارة تعليم، وطني",reg:[R("1448/04/23","1448/05/25")],apply:"ترشيح من المدرسة (من خلال رائد النشاط)",ak:"raed",org:NA,ok:"nashat",type:"فردية",mode:"حضورية، افتراضية"},
+{id:"ci8",dom:"cit",n:"ريادة الأعمال (ريادي)",stage:"المتوسطة، الثانوية",g:"بنين وبنات",tags:["m","s"],grades:"من الأول المتوسط إلى الثالث الثانوي",level:"إدارة تعليم، وطني",reg:[R("1448/05/01","1448/06/02")],apply:"ترشيح من المدرسة (من خلال رائد النشاط)",ak:"raed",org:NA,ok:"nashat",type:"فردية",mode:"حضورية، افتراضية"},
+{id:"ci9",dom:"cit",n:"مسابقة إنجاز السعودية",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"من الرابع الابتدائي إلى الثالث الثانوي",level:"مدرسي، إدارة تعليم (جميع المراحل)؛ وطني، دولي (الثانوية)",reg:[R("1448/04/20","1448/06/20")],apply:"ترشيح من المدرسة/إدارة التعليم (من خلال رائد النشاط)",ak:"raed",org:NA+"، إنجاز السعودية",ok:"nashat",type:"فردية، جماعية",mode:"حضورية، افتراضية"},
+{id:"ci10",dom:"cit",n:"جائزة المستثمر الذكي الخليجي (الموسم الخامس)",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"إدارة تعليم، خليجي",reg:[R("1448/06/21")],apply:"تسجيل ذاتي من الطالب (موقع برنامج مُلم)",ak:"self",org:NA+"، هيئة السوق المالية (برنامج مُلم)",ok:"nashat",type:"فردية، جماعية",mode:"افتراضية"},
+{id:"ci11",dom:"cit",n:"جائزة رواد القدرات لذوي الإعاقة",stage:"جميع المراحل (ذوو الإعاقة)",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"إدارة تعليم (المنطقة الشرقية)",reg:[R("1448/05/11","1448/08/25")],apply:"ترشيح من المدرسة",ak:"raed",org:"الإدارة العامة للتعليم بالمنطقة الشرقية",ok:"region",region:"الشرقية",type:"فردية، جماعية",mode:"حضورية، افتراضية"},
+// الكشفي
+{id:"sk1",dom:"scout",n:"منافسة رسل السلام (للتميز الكشفي)",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"من الرابع الابتدائي إلى الثالث الثانوي (أشبال، فتيان، متقدم)",level:"إدارة تعليم، وطني",reg:[R("1448/04/02","1448/04/06")],apply:"ترشيح من المدرسة (من خلال رائد النشاط)",ak:"raed",org:NA,ok:"nashat",type:"فردية، جماعية",mode:"حضورية"},
+// الثقافة والفنون
+{id:"cu1",dom:"cult",n:"مسابقة أقرأ",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"إدارة تعليم، وطني",reg:[R("1448/04/01","1448/08/20")],apply:"تسجيل ذاتي من الطالب (موقع جائزة أقرأ)",ak:"self",org:NA+"، مركز الملك عبدالعزيز الثقافي العالمي (إثراء)",ok:"nashat",type:"فردية",mode:"حضورية، افتراضية"},
+{id:"cu2",dom:"cult",n:"منافسات اللغة العربية",stage:"المتوسطة، الثانوية",g:"بنين وبنات",tags:["m","s"],grades:"من الأول المتوسط إلى الثالث الثانوي",level:"مدرسي، إدارة تعليم، وطني",reg:[R("1448/06/05","1448/08/05")],apply:"ترشيح من المدرسة (من خلال رائد النشاط)",ak:"raed",org:NA,ok:"nashat",type:"فردية",mode:"حضورية، افتراضية"},
+{id:"cu3",dom:"cult",n:"مهرجان المسرح المدرسي",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"مدرسي، إدارة تعليم، وطني",reg:[R("1448/06/05","1448/08/05")],apply:"ترشيح من المدرسة (من خلال رائد النشاط)",ak:"raed",org:NA,ok:"nashat",type:"جماعية",mode:"حضورية، افتراضية"},
+{id:"cu4",dom:"cult",n:"أولمبياد اللغة الإنجليزية الوطني والدولي",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"الصغار: 6–10 أعوام؛ الكبار: 11–17 عامًا",level:"وطني، دولي",reg:[R("1447/11/17","1447/12/01","الوطني"),R("1448/03/19","1448/04/14","الدولي")],apply:"ترشيح من المدرسة (للفرق المتأهلة وطنيًا)",ak:"raed",org:MW+"، إدارة أولمبياد اللغة الإنجليزية (ELO)",ok:"mawhoob",type:"جماعية",mode:"الوطني: افتراضية؛ الدولي: حضورية"},
+{id:"cu5",dom:"cult",n:"مسابقة أبيليمبيكس",stage:"المتوسطة، الثانوية (ذوو الإعاقة)",g:"بنين وبنات",tags:["m","s"],grades:"الفئة العمرية من 15 عامًا فأكثر",level:"دولي",reg:[R("1448/03/19","1448/05/20")],apply:"ترشيح من إدارة التعليم",ak:"edu",org:"وزارة التعليم (الإدارة العامة لبرامج ذوي الإعاقة)",ok:"disab",type:"فردية، جماعية",mode:"حضورية"},
+{id:"cu6",dom:"cult",n:"العدسة الذكية لفنون المستقبل",stage:"المتوسطة، الثانوية",g:"بنين وبنات",tags:["m","s"],grades:"من الأول المتوسط إلى الثالث الثانوي",level:"إدارة تعليم (المنطقة الشرقية)",reg:[R("1448/04/23","1448/04/27")],apply:"ترشيح من المدرسة/إدارة التعليم",ak:"raed edu",org:"الإدارة العامة للتعليم بالمنطقة الشرقية",ok:"region",region:"الشرقية",type:"فردية، جماعية",mode:"حضورية"},
+{id:"cu7",dom:"cult",n:"المنطقة الشرقية: اليوم والمستقبل",stage:"جميع المراحل",g:"بنين وبنات",tags:["p","m","s"],grades:"جميع الصفوف",level:"إدارة تعليم (المنطقة الشرقية)",reg:[R("1448/08/09","1448/08/13")],apply:"ترشيح من المدرسة/إدارة التعليم",ak:"raed edu",org:"الإدارة العامة للتعليم بالمنطقة الشرقية",ok:"region",region:"الشرقية",type:"فردية، جماعية",mode:"حضورية"},
+{id:"cu8",dom:"cult",n:"المسابقة الوطنية للغة الصينية",stage:"المتوسطة",g:"بنين وبنات",tags:["m"],grades:"من الأول إلى الثالث المتوسط (المدارس المطبقة لبرنامج اللغة الصينية)",level:"إدارة تعليم (المنطقة الشرقية)",reg:[R("1448/10/10","1448/12/01")],apply:"ترشيح من المدرسة",ak:"raed",org:"الإدارة العامة للتعليم بالمنطقة الشرقية",ok:"region",region:"الشرقية",type:"جماعية",mode:"حضورية، افتراضية"}
+];
+// مسابقات الإدارة العامة للنشاط الطلابي فقط، مرتبة حسب المجال
+const D=ALL.filter(c=>c.ok==="nashat").map((c,i)=>({...c,_i:i})).sort((a,b)=>ORDER.indexOf(a.dom)-ORDER.indexOf(b.dom)||a._i-b._i);
+
+const MONTHS=["محرم","صفر","ربيع الأول","ربيع الآخر","جمادى الأولى","جمادى الآخرة","رجب","شعبان","رمضان","شوال","ذو القعدة","ذو الحجة"];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const parse=s=>s.split("/").map(Number);
+const key=([y,m,d])=>y*10000+m*100+d;
+const dayn=([y,m,d])=>((y-1440)*12+(m-1))*29.53+d;
+
+// Today in Umm al-Qura
+let T=[1448,4,21];
+try{
+  const p=new Intl.DateTimeFormat("en-u-ca-islamic-umalqura-nu-latn",{year:"numeric",month:"numeric",day:"numeric"}).formatToParts(new Date());
+  const g=t=>parseInt((p.find(x=>x.type===t)||{}).value);
+  const y=g("year"),m=g("month"),d=g("day");
+  if(y>1400&&m&&d)T=[y,m,d];
+}catch(e){}
+const TK=key(T),TN=dayn(T);
+
+function status(c){
+  let best=null;
+  for(const w of c.reg){
+    const s=parse(w.s),e=parse(w.e),sk=key(s),ek=key(e);
+    let st;
+    if(w.single){
+      st=TK<sk?{k:"soon",t:`يبدأ خلال ${Math.max(1,Math.round(dayn(s)-TN))} يومًا تقريبًا`}:{k:"open",t:"بدأ التسجيل (لم يُحدَّد موعد إغلاق)"};
+    }else if(TK<sk) st={k:"soon",t:`يبدأ خلال ${Math.max(1,Math.round(dayn(s)-TN))} يومًا تقريبًا`};
+    else if(TK<=ek){const left=Math.round(dayn(e)-TN);st={k:"open",t:left<=0?"مفتوح، آخر يوم اليوم":`مفتوح، يُغلق خلال ${left} يومًا تقريبًا`}}
+    else st={k:"ended",t:"انتهى التسجيل"};
+    if(w.l)st.t=w.l+": "+st.t;
+    const rank={open:0,soon:1,ended:2};
+    if(!best||rank[st.k]<rank[best.k])best=st;
+  }
+  return best;
+}
+const regText=c=>c.reg.map(w=>`<div>${w.l?`<em>${w.l}: </em>`:""}${w.s}هـ${w.single?"":` ← ${w.e}هـ`}</div>`).join("");
+const regPlain=c=>c.reg.map(w=>`${w.l?w.l+": ":""}${w.s}${w.single?"":" – "+w.e}هـ`).join("<br>");
+
+// state
+const LS="nashat-musabaqat-1448";
+let S={sel:[],info:{},edits:{},hideRegional:true,view:"table",doms:[]};
+try{const v=JSON.parse(localStorage.getItem(LS)||"null");if(v)S={...S,...v}}catch(e){}
+const save=()=>{try{localStorage.setItem(LS,JSON.stringify(S))}catch(e){}};
+const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),1800)};
+
+// header
+const openN=D.filter(c=>status(c).k==="open").length;
+$("#today").innerHTML=`اليوم ${T[2]} ${MONTHS[T[1]-1]} ${T[0]}هـ، والتسجيل مفتوح الآن في <b>${openN} مسابقة</b>.`;
+{const sc=k=>D.filter(c=>status(c).k===k).length;
+ $("#stats").innerHTML=`<div class="stat"><b>${D.length}</b><span>مسابقة معتمدة</span></div><div class="stat"><b>${sc("open")}</b><span>تسجيلها مفتوح</span></div><div class="stat"><b>${sc("soon")}</b><span>قادمة</span></div>`;}
+
+// domain chips
+$("#domChips").innerHTML=Object.entries(DOMS).map(([k,v])=>`<button class="chip" data-d="${k}" aria-pressed="${S.doms.includes(k)}"><span class="dot" style="background:${v.c}"></span>${v.n} <span style="color:var(--muted)">(${D.filter(c=>c.dom===k).length})</span></button>`).join("");
+$("#domChips").addEventListener("click",e=>{const b=e.target.closest("[data-d]");if(!b)return;const k=b.dataset.d;S.doms=S.doms.includes(k)?S.doms.filter(x=>x!==k):[...S.doms,k];b.setAttribute("aria-pressed",S.doms.includes(k));save();render()});
+
+
+function filtered(){
+  const q=$("#q").value.trim(),st=$("#fStage").value,stat=$("#fStatus").value,ap=$("#fApply").value;
+  return D.filter(c=>{
+    if(S.doms.length&&!S.doms.includes(c.dom))return false;
+    if(q&&!(c.n+c.org).includes(q))return false;
+    if(st&&!c.tags.includes(st))return false;
+    if(ap&&!c.ak.split(" ").includes(ap))return false;
+    if(stat&&status(c).k!==stat)return false;
+    return true;
+  });
+}
+const dom=c=>`<span class="dom"><i style="background:${DOMS[c.dom].c}"></i>${DOMS[c.dom].n}</span>`;
+
+function renderMobile(list){
+  return `<div class="mlist">${list.map(c=>{const st=status(c),on=S.sel.includes(c.id);return `<article class="mc ${on?"sel":""}" style="--dc:${DOMS[c.dom].c}">
+    <div class="mc-h"><div class="mc-dom">${DOMS[c.dom].n}</div><h3>${esc(c.n)}</h3><span class="st ${st.k}">${st.t}</span></div>
+    <dl class="mc-g">
+      <div><dt>المرحلة</dt><dd>${esc(c.stage)}</dd></div>
+      <div><dt>مستوى التفعيل</dt><dd>${esc(c.level)}</dd></div>
+      <div><dt>التسجيل</dt><dd class="reg">${c.reg.map(w=>`<div>${w.l?`<b>${w.l}</b><br>`:""}${w.single?`<bdi>${w.s}</bdi>هـ`:`من <bdi>${w.s}</bdi><br>إلى <bdi>${w.e}</bdi>`}</div>`).join("")}</dd></div>
+      <div><dt>آلية التقديم</dt><dd>${esc(c.apply)}</dd></div>
+    </dl>
+    <details><summary>التفاصيل</summary>
+      <p><b>الصفوف: </b>${esc(c.grades)}</p>
+      <p><b>نوع المشاركة: </b>${esc(c.type)}، ${esc(c.mode)} (${c.g})</p>
+      <p><b>الجهة المنظمة: </b>${esc(c.org)}</p>
+    </details>
+    <button class="mc-add" data-tg="${c.id}" aria-pressed="${on}">${on?"✓ ضمن الخطة":"+ أضف إلى الخطة"}</button>
+  </article>`}).join("")}</div>`;
+}
+function renderTable(list){
+  if(!list.length)return `<div class="empty">لا توجد مسابقات تطابق هذه التصفية. جرّب إزالة أحد الفلاتر.</div>`;
+  return renderMobile(list)+`<div class="tablebox"><table class="guide"><thead><tr>
+    <th style="width:36px"><span class="sr" title="اختيار">✓</span></th><th>المسابقة</th><th>المجال</th><th>المرحلة المستهدفة</th><th>الصفوف المستهدفة</th><th>مستوى التفعيل</th><th>تاريخ التسجيل</th><th>آلية التقديم</th></tr></thead><tbody>
+  ${list.map(c=>{const st=status(c),on=S.sel.includes(c.id);return `<tr class="${on?"sel":""}">
+    <td class="c-pick"><input type="checkbox" class="pick" data-id="${c.id}" ${on?"checked":""} aria-label="إضافة ${esc(c.n)} إلى الخطة"></td>
+    <td class="c-name"><div class="cname">${esc(c.n)}<small>${esc(c.org)}</small></div>${c.region?`<span class="tag">خاصة بتعليم ${c.region}</span>`:""}${c.g==="بنين"?`<span class="tag">بنين فقط</span>`:""}<span class="tag">${esc(c.type)}</span><span class="tag">${esc(c.mode)}</span></td>
+    <td data-l="المجال">${dom(c)}</td>
+    <td data-l="المرحلة">${esc(c.stage)} <span style="color:var(--muted)">(${c.g})</span></td>
+    <td data-l="الصفوف">${esc(c.grades)}</td>
+    <td data-l="مستوى التفعيل">${esc(c.level)}</td>
+    <td data-l="التسجيل" class="reg">${regText(c)}<span class="st ${st.k}">${st.t}</span></td>
+    <td data-l="آلية التقديم">${esc(c.apply)}</td></tr>`}).join("")}
+  </tbody></table></div>`;
+}
+function pos(s){const [y,m,d]=parse(s);return Math.min(1,Math.max(0,((y-1448)*12+(m-1)+(d-1)/30)/12))}
+function renderTime(list){
+  if(!list.length)return renderTable(list);
+  const now=pos(`${T[0]}/${String(T[1]).padStart(2,"0")}/${T[2]}`)*100;
+  return `<div class="tl"><div class="tl-in">
+  <div class="tl-row tl-head"><div class="tl-name" style="color:var(--muted)">العام الدراسي 1448هـ</div><div class="tl-track">${MONTHS.map(m=>`<span>${m}</span>`).join("")}</div></div>
+  ${[...list].sort((a,b)=>key(parse(a.reg[0].s))-key(parse(b.reg[0].s))).map(c=>{const on=S.sel.includes(c.id);return `<div class="tl-row"><label class="tl-name"><input type="checkbox" class="pick" data-id="${c.id}" ${on?"checked":""}>${esc(c.n)}</label><div class="tl-track">
+    ${c.reg.map(w=>{const a=pos(w.s),b=w.single?a+0.012:pos(w.e)+1/360,st=key(parse(w.e))<TK&&!w.single?"ended":"";if(b<=0)return `<span style="position:absolute;top:9px;inset-inline-start:4px;font-size:12px;color:var(--ended)">انتهى (${w.e}هـ)</span>`;return `<span class="tl-bar ${st}" title="${w.l?w.l+": ":""}${w.s}${w.single?"":" – "+w.e}" style="inset-inline-start:${a*100}%;width:${Math.max(0.6,(b-a)*100)}%;background:${DOMS[c.dom].c}"></span>`}).join("")}
+  </div></div>`}).join("")}
+  <div class="tl-now" style="inset-inline-start:calc(240px + (100% - 240px) * ${now/100})"></div>
+  </div></div>`;
+}
+function render(){
+  const list=filtered();
+  $("#resultInfo").textContent=`${list.length} من ${D.length} مسابقة`;
+  $("#guideBody").innerHTML=S.view==="time"?renderTime(list):renderTable(list);
+  $("#vTable").setAttribute("aria-pressed",S.view==="table");$("#vTime").setAttribute("aria-pressed",S.view==="time");
+  const n=S.sel.length;$("#selCount").textContent=n;$("#fabN").textContent=n;
+  $("#fab").hidden=!n||$("#guideView").hidden;
+}
+["#q","#fStage","#fStatus","#fApply"].forEach(s=>$(s).addEventListener("input",render));
+
+$("#vTable").onclick=()=>{S.view="table";save();render()};
+$("#vTime").onclick=()=>{S.view="time";save();render()};
+$("#guideBody").addEventListener("click",e=>{
+  const b=e.target.closest("[data-tg]");if(!b)return;const id=b.dataset.tg;
+  const on=!S.sel.includes(id);S.sel=on?[...S.sel,id]:S.sel.filter(x=>x!==id);
+  save();render();if(on)toast("أُضيفت إلى الخطة ("+S.sel.length+")");
+});
+$("#guideBody").addEventListener("change",e=>{
+  const b=e.target.closest(".pick");if(!b)return;const id=b.dataset.id;
+  S.sel=b.checked?[...new Set([...S.sel,id])]:S.sel.filter(x=>x!==id);
+  const c=D.find(x=>x.id===id);
+  save();render();
+});
+
+// tabs
+function show(tab){
+  $("#guideView").hidden=tab!=="guide";$("#planView").hidden=tab!=="plan";$("#cardView").hidden=tab!=="card";
+  $("#tGuide").setAttribute("aria-selected",tab==="guide");$("#tPlan").setAttribute("aria-selected",tab==="plan");$("#tCard").setAttribute("aria-selected",tab==="card");
+  if(tab==="plan")renderPlan();if(tab==="card")renderCards();render();scrollTo({top:0});
+}
+$("#tGuide").onclick=()=>show("guide");$("#tPlan").onclick=()=>show("plan");$("#tCard").onclick=()=>show("card");$("#fab").onclick=()=>show("plan");
+
+// plan
+const INFO=["iRegion","iOffice","iSchool","iStage","iRaed","iManager","iTerm","iCal"];
+if(S.info.iSchool&&S.info.iCal)$("#infoPanel").removeAttribute("open");
+INFO.forEach(id=>{const el=$("#"+id);el.value=S.info[id]||"";el.addEventListener("input",()=>{S.info[id]=el.value;save();renderPlan()})});
+const logoHTML=()=>S.info.logo?`<img src="${S.info.logo}" alt="شعار وزارة التعليم">`:`<b>وزارة التعليم</b><span>Ministry of Education</span>`;
+const ed=(id,f,ph)=>`<span class="ed" contenteditable="true" data-id="${id}" data-f="${f}" data-ph="${ph}">${esc((S.edits[id]||{})[f]||"")}</span>`;
+function renderPlanList(){
+  const sel=planComps();
+  $("#planList").innerHTML=sel.length?sel.map(c=>{const E=S.edits[c.id]||{};return `<div class="pi" style="--dc:${DOMS[c.dom].c}">
+    <span class="mc-dom">${DOMS[c.dom].n}</span><h4>${esc(c.n)}</h4>
+    <div class="pi-g" style="margin-top:8px">
+      <label>المعلم المنفذ<input data-pl="${c.id}" data-f="resp" value="${esc(E.resp||"")}" placeholder="الاسم"></label>
+      <label>عدد الطلاب<input data-pl="${c.id}" data-f="count" value="${esc(E.count||"")}" inputmode="numeric" placeholder="—"></label>
+      <label>بداية التنفيذ${dateCell(c.id,"start")}</label>
+      <label>نهاية التنفيذ${dateCell(c.id,"end")}</label>
+    </div>
+    <div class="pi-a"><button class="btn" data-card="${c.id}">إنشاء بطاقة التنفيذ</button></div>
+  </div>`}).join(""):`<div class="panel noplan">لم تُختر أي مسابقة بعد. ارجع إلى «دليل المسابقات» واضغط «أضف إلى الخطة».</div>`;
+}
+function fitSheet(){const s=$("#sheet");if(!s)return;const w=s.parentElement.clientWidth;s.style.zoom=w<980?Math.max(.3,(w-2)/980):1}
+addEventListener("resize",()=>{if(!$("#planView").hidden)fitSheet()});
+function renderPlan(){renderSheet();renderPlanList();fitSheet()}
+function renderSheet(){
+  const I=k=>esc(S.info[k]||"");
+  const sel=D.filter(c=>S.sel.includes(c.id)).sort((a,b)=>ORDER.indexOf(a.dom)-ORDER.indexOf(b.dom)||key(parse(a.reg[0].s))-key(parse(b.reg[0].s)));
+  const hd=`${T[2]}/${T[1]}/${T[0]}هـ`;
+  $("#sheet").innerHTML=`
+  <div class="sh-head">
+    <div class="sh-logo">${logoHTML()}</div>
+    <div class="sh-org">الإدارة العامة للتعليم ${I("iRegion")?"ب"+I("iRegion"):"بـ ................"}${I("iOffice")?"<br>"+I("iOffice"):""}<br><span class="school">${I("iSchool")||"المدرسة: ................"}</span></div>
+    <div></div>
+  </div>
+  <div class="sh-title">
+    <h2>خطة تنفيذ المسابقات للنشاط الطلابي</h2>
+    <p>المرحلة: ${I("iStage")||"................"}</p>
+    <p>العام الدراسي 1448هـ</p>
+  </div>
+  ${sel.length?`<table class="plan"><thead><tr><th>م</th><th>المسابقة</th><th>المجال</th><th>الصفوف المستهدفة</th><th>مستوى التفعيل</th><th>فترة التسجيل</th><th>آلية التقديم</th><th>المعلم المنفذ</th><th>بداية التنفيذ</th><th>نهاية التنفيذ</th><th>عدد الطلاب</th><th class="noprint">البطاقة</th></tr></thead><tbody>
+  ${sel.map((c,i)=>`<tr><td>${i+1}</td><td class="tn">${esc(c.n)}</td><td>${DOMS[c.dom].n}</td><td>${esc(c.grades)}</td><td>${esc(c.level)}</td><td>${regPlain(c)}</td><td>${esc(c.apply)}</td><td>${ed(c.id,"resp","اكتب الاسم")}</td><td>${dateCell(c.id,"start")}</td><td>${dateCell(c.id,"end")}</td><td>${ed(c.id,"count","—")}</td><td class="noprint"><button class="btn" data-card="${c.id}" style="padding:4px 10px;font-size:12.5px">إنشاء بطاقة</button></td></tr>`).join("")}
+  </tbody></table>`:`<div class="noplan">لم تُختر أي مسابقة بعد. ارجع إلى «دليل المسابقات» وحدّد المسابقات المناسبة لمدرستك.</div>`}
+  <div class="sh-sign">
+    <div><b>رائد النشاط</b>الاسم: ${I("iRaed")||"........................"}<br>التوقيع: ........................</div>
+    <div><b>ختم المدرسة</b></div>
+    <div><b>مدير المدرسة</b>الاسم: ${I("iManager")||"........................"}<br>التوقيع: ........................</div>
+  </div>`;
+}
+$("#iLogo").addEventListener("change",e=>{
+  const f=e.target.files[0];if(!f)return;const rd=new FileReader();
+  rd.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,320/Math.max(im.width,im.height)),cv=document.createElement("canvas");cv.width=Math.round(im.width*k);cv.height=Math.round(im.height*k);cv.getContext("2d").drawImage(im,0,0,cv.width,cv.height);S.info.logo=cv.toDataURL("image/png");save();renderPlan();toast("أُضيف الشعار للخطة والبطاقة")};im.src=rd.result};
+  rd.readAsDataURL(f);
+});
+$("#sheet").addEventListener("input",e=>{const el=e.target.closest(".ed");if(!el)return;const {id,f}=el.dataset;S.edits[id]={...(S.edits[id]||{}),[f]:el.textContent.trim()};save()});
+$("#sheet").addEventListener("focusout",e=>{const el=e.target.closest(".ed");if(!el||!["start","end"].includes(el.dataset.f))return;const v=parseH(el.textContent);if(v){const t=fmtH(v);el.textContent=t;S.edits[el.dataset.id][el.dataset.f]=t;save()}else if(el.textContent.trim())toast("اكتب التاريخ هكذا: 1448/05/10")});
+$("#planList").addEventListener("input",e=>{const el=e.target.closest("[data-pl]");if(!el)return;const id=el.dataset.pl;S.edits[id]={...(S.edits[id]||{}),[el.dataset.f]:el.value.trim()};save();renderSheet();fitSheet()});
+$("#planList").addEventListener("click",e=>{const d=e.target.closest("[data-dp]");if(d){e.preventDefault();return openPicker(d.dataset.dp,d.dataset.f)}const b=e.target.closest("[data-card]");if(b){S.cardSel=b.dataset.card;save();show("card")}});
+$("#sheet").addEventListener("click",e=>{const d=e.target.closest("[data-dp]");if(d)return openPicker(d.dataset.dp,d.dataset.f);const b=e.target.closest("[data-card]");if(!b)return;S.cardSel=b.dataset.card;save();show("card")});
+$("#toCards").onclick=()=>show("card");
+$("#printBtn").onclick=()=>{renderPlan();document.body.dataset.p="plan";$("#sheet").style.zoom=1;window.print();fitSheet()};
+
+// ---------- Hijri helpers ----------
+const AR_DIG={"٠":0,"١":1,"٢":2,"٣":3,"٤":4,"٥":5,"٦":6,"٧":7,"٨":8,"٩":9};
+function parseH(s){
+  s=String(s||"").replace(/[٠-٩]/g,d=>AR_DIG[d]);
+  let m=s.match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/);if(m)return chk([+m[1],+m[2],+m[3]]);
+  m=s.match(/(\d{1,2})\D+(\d{1,2})\D+(\d{4})/);if(m)return chk([+m[3],+m[2],+m[1]]);
+  return null;
+}
+const chk=a=>a[0]>1400&&a[1]>=1&&a[1]<=12&&a[2]>=1&&a[2]<=30?a:null;
+const p2=n=>String(n).padStart(2,"0");
+const fmtH=a=>`${a[0]}/${p2(a[1])}/${p2(a[2])}`;
+let HF=null;try{HF=new Intl.DateTimeFormat("en-u-ca-islamic-umalqura-nu-latn",{year:"numeric",month:"numeric",day:"numeric"})}catch(e){}
+function h2g(a){
+  if(!HF)return null;
+  const base=new Date();base.setHours(12,0,0,0);
+  const off=Math.round(dayn(a)-TN);
+  for(const k of [0,-1,1,-2,2,-3,3]){
+    const dt=new Date(base.getTime()+(off+k)*864e5),pp=HF.formatToParts(dt),g=t=>parseInt((pp.find(x=>x.type===t)||{}).value);
+    if(g("year")===a[0]&&g("month")===a[1]&&g("day")===a[2])return dt;
+  }
+  return null;
+}
+const WD=(()=>{try{const f=new Intl.DateTimeFormat("ar-SA-u-ca-gregory",{weekday:"long"});return d=>f.format(d)}catch(e){return d=>["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"][d.getDay()]}})();
+const ORD=["الأول","الثاني","الثالث","الرابع","الخامس","السادس","السابع","الثامن","التاسع","العاشر","الحادي عشر","الثاني عشر","الثالث عشر","الرابع عشر","الخامس عشر","السادس عشر","السابع عشر","الثامن عشر","التاسع عشر","العشرون"];
+const CAL={"west":{"s1":[{"n":1,"exam":false,"days":[{"h":"1448/03/17","g":"30/8/2026","w":"الأحد","off":""},{"h":"1448/03/18","g":"31/8/2026","w":"الاثنين","off":""},{"h":"1448/03/19","g":"1/9/2026","w":"الثلاثاء","off":""},{"h":"1448/03/20","g":"2/9/2026","w":"الأربعاء","off":""},{"h":"1448/03/21","g":"3/9/2026","w":"الخميس","off":""}]},{"n":2,"exam":false,"days":[{"h":"1448/03/24","g":"6/9/2026","w":"الأحد","off":""},{"h":"1448/03/25","g":"7/9/2026","w":"الاثنين","off":""},{"h":"1448/03/26","g":"8/9/2026","w":"الثلاثاء","off":""},{"h":"1448/03/27","g":"9/9/2026","w":"الأربعاء","off":""},{"h":"1448/03/28","g":"10/9/2026","w":"الخميس","off":""}]},{"n":3,"exam":false,"days":[{"h":"1448/04/02","g":"13/9/2026","w":"الأحد","off":""},{"h":"1448/04/03","g":"14/9/2026","w":"الاثنين","off":""},{"h":"1448/04/04","g":"15/9/2026","w":"الثلاثاء","off":""},{"h":"1448/04/05","g":"16/9/2026","w":"الأربعاء","off":""},{"h":"1448/04/06","g":"17/9/2026","w":"الخميس","off":""}]},{"n":4,"exam":false,"days":[{"h":"1448/04/09","g":"20/9/2026","w":"الأحد","off":""},{"h":"1448/04/10","g":"21/9/2026","w":"الاثنين","off":""},{"h":"1448/04/11","g":"22/9/2026","w":"الثلاثاء","off":""},{"h":"1448/04/12","g":"23/9/2026","w":"الأربعاء","off":"إجازة اليوم الوطني"},{"h":"1448/04/13","g":"24/9/2026","w":"الخميس","off":"إجازة اليوم الوطني"}]},{"n":5,"exam":false,"days":[{"h":"1448/04/16","g":"27/9/2026","w":"الأحد","off":""},{"h":"1448/04/17","g":"28/9/2026","w":"الاثنين","off":""},{"h":"1448/04/18","g":"29/9/2026","w":"الثلاثاء","off":""},{"h":"1448/04/19","g":"30/9/2026","w":"الأربعاء","off":""},{"h":"1448/04/20","g":"1/10/2026","w":"الخميس","off":""}]},{"n":6,"exam":false,"days":[{"h":"1448/04/23","g":"4/10/2026","w":"الأحد","off":""},{"h":"1448/04/24","g":"5/10/2026","w":"الاثنين","off":""},{"h":"1448/04/25","g":"6/10/2026","w":"الثلاثاء","off":""},{"h":"1448/04/26","g":"7/10/2026","w":"الأربعاء","off":""},{"h":"1448/04/27","g":"8/10/2026","w":"الخميس","off":""}]},{"n":7,"exam":false,"days":[{"h":"1448/04/30","g":"11/10/2026","w":"الأحد","off":""},{"h":"1448/05/01","g":"12/10/2026","w":"الاثنين","off":""},{"h":"1448/05/02","g":"13/10/2026","w":"الثلاثاء","off":""},{"h":"1448/05/03","g":"14/10/2026","w":"الأربعاء","off":""},{"h":"1448/05/04","g":"15/10/2026","w":"الخميس","off":""}]},{"n":8,"exam":false,"days":[{"h":"1448/05/07","g":"18/10/2026","w":"الأحد","off":""},{"h":"1448/05/08","g":"19/10/2026","w":"الاثنين","off":""},{"h":"1448/05/09","g":"20/10/2026","w":"الثلاثاء","off":""},{"h":"1448/05/10","g":"21/10/2026","w":"الأربعاء","off":""},{"h":"1448/05/11","g":"22/10/2026","w":"الخميس","off":""}]},{"n":9,"exam":false,"days":[{"h":"1448/05/14","g":"25/10/2026","w":"الأحد","off":""},{"h":"1448/05/15","g":"26/10/2026","w":"الاثنين","off":""},{"h":"1448/05/16","g":"27/10/2026","w":"الثلاثاء","off":""},{"h":"1448/05/17","g":"28/10/2026","w":"الأربعاء","off":""},{"h":"1448/05/18","g":"29/10/2026","w":"الخميس","off":""}]},{"n":10,"exam":false,"days":[{"h":"1448/05/21","g":"1/11/2026","w":"الأحد","off":""},{"h":"1448/05/22","g":"2/11/2026","w":"الاثنين","off":""},{"h":"1448/05/23","g":"3/11/2026","w":"الثلاثاء","off":""},{"h":"1448/05/24","g":"4/11/2026","w":"الأربعاء","off":""},{"h":"1448/05/25","g":"5/11/2026","w":"الخميس","off":""}]},{"n":11,"exam":false,"days":[{"h":"1448/05/28","g":"8/11/2026","w":"الأحد","off":""},{"h":"1448/05/29","g":"9/11/2026","w":"الاثنين","off":""},{"h":"1448/05/30","g":"10/11/2026","w":"الثلاثاء","off":""},{"h":"1448/06/01","g":"11/11/2026","w":"الأربعاء","off":""},{"h":"1448/06/02","g":"12/11/2026","w":"الخميس","off":""}]},{"n":12,"exam":false,"days":[{"h":"1448/06/05","g":"15/11/2026","w":"الأحد","off":""},{"h":"1448/06/06","g":"16/11/2026","w":"الاثنين","off":""},{"h":"1448/06/07","g":"17/11/2026","w":"الثلاثاء","off":""},{"h":"1448/06/08","g":"18/11/2026","w":"الأربعاء","off":""},{"h":"1448/06/09","g":"19/11/2026","w":"الخميس","off":""}]},{"n":13,"exam":false,"days":[{"h":"1448/06/19","g":"29/11/2026","w":"الأحد","off":""},{"h":"1448/06/20","g":"30/11/2026","w":"الاثنين","off":""},{"h":"1448/06/21","g":"1/12/2026","w":"الثلاثاء","off":""},{"h":"1448/06/22","g":"2/12/2026","w":"الأربعاء","off":""},{"h":"1448/06/23","g":"3/12/2026","w":"الخميس","off":""}]},{"n":14,"exam":false,"days":[{"h":"1448/06/26","g":"6/12/2026","w":"الأحد","off":""},{"h":"1448/06/27","g":"7/12/2026","w":"الاثنين","off":""},{"h":"1448/06/28","g":"8/12/2026","w":"الثلاثاء","off":""},{"h":"1448/06/29","g":"9/12/2026","w":"الأربعاء","off":""},{"h":"1448/07/01","g":"10/12/2026","w":"الخميس","off":""}]},{"n":15,"exam":false,"days":[{"h":"1448/07/04","g":"13/12/2026","w":"الأحد","off":""},{"h":"1448/07/05","g":"14/12/2026","w":"الاثنين","off":""},{"h":"1448/07/06","g":"15/12/2026","w":"الثلاثاء","off":""},{"h":"1448/07/07","g":"16/12/2026","w":"الأربعاء","off":""},{"h":"1448/07/08","g":"17/12/2026","w":"الخميس","off":""}]},{"n":16,"exam":false,"days":[{"h":"1448/07/11","g":"20/12/2026","w":"الأحد","off":""},{"h":"1448/07/12","g":"21/12/2026","w":"الاثنين","off":""},{"h":"1448/07/13","g":"22/12/2026","w":"الثلاثاء","off":""},{"h":"1448/07/14","g":"23/12/2026","w":"الأربعاء","off":""},{"h":"1448/07/15","g":"24/12/2026","w":"الخميس","off":""}]},{"n":17,"exam":false,"days":[{"h":"1448/07/18","g":"27/12/2026","w":"الأحد","off":""},{"h":"1448/07/19","g":"28/12/2026","w":"الاثنين","off":""},{"h":"1448/07/20","g":"29/12/2026","w":"الثلاثاء","off":""},{"h":"1448/07/21","g":"30/12/2026","w":"الأربعاء","off":""},{"h":"1448/07/22","g":"31/12/2026","w":"الخميس","off":""}]},{"n":18,"exam":true,"days":[{"h":"1448/07/25","g":"3/1/2027","w":"الأحد","off":""},{"h":"1448/07/26","g":"4/1/2027","w":"الاثنين","off":""},{"h":"1448/07/27","g":"5/1/2027","w":"الثلاثاء","off":""},{"h":"1448/07/28","g":"6/1/2027","w":"الأربعاء","off":""},{"h":"1448/07/29","g":"7/1/2027","w":"الخميس","off":""}]}],"s2":[{"n":1,"exam":false,"days":[{"h":"1448/08/09","g":"17/1/2027","w":"الأحد","off":""},{"h":"1448/08/10","g":"18/1/2027","w":"الاثنين","off":""},{"h":"1448/08/11","g":"19/1/2027","w":"الثلاثاء","off":""},{"h":"1448/08/12","g":"20/1/2027","w":"الأربعاء","off":""},{"h":"1448/08/13","g":"21/1/2027","w":"الخميس","off":""}]},{"n":2,"exam":false,"days":[{"h":"1448/08/16","g":"24/1/2027","w":"الأحد","off":""},{"h":"1448/08/17","g":"25/1/2027","w":"الاثنين","off":""},{"h":"1448/08/18","g":"26/1/2027","w":"الثلاثاء","off":""},{"h":"1448/08/19","g":"27/1/2027","w":"الأربعاء","off":""},{"h":"1448/08/20","g":"28/1/2027","w":"الخميس","off":""}]},{"n":3,"exam":false,"days":[{"h":"1448/08/23","g":"31/1/2027","w":"الأحد","off":""},{"h":"1448/08/24","g":"1/2/2027","w":"الاثنين","off":""},{"h":"1448/08/25","g":"2/2/2027","w":"الثلاثاء","off":""},{"h":"1448/08/26","g":"3/2/2027","w":"الأربعاء","off":""},{"h":"1448/08/27","g":"4/2/2027","w":"الخميس","off":""}]},{"n":4,"exam":false,"days":[{"h":"1448/08/30","g":"7/2/2027","w":"الأحد","off":""},{"h":"1448/09/01","g":"8/2/2027","w":"الاثنين","off":""},{"h":"1448/09/02","g":"9/2/2027","w":"الثلاثاء","off":""},{"h":"1448/09/03","g":"10/2/2027","w":"الأربعاء","off":""},{"h":"1448/09/04","g":"11/2/2027","w":"الخميس","off":""}]},{"n":5,"exam":false,"days":[{"h":"1448/09/07","g":"14/2/2027","w":"الأحد","off":""},{"h":"1448/09/08","g":"15/2/2027","w":"الاثنين","off":""},{"h":"1448/09/09","g":"16/2/2027","w":"الثلاثاء","off":""},{"h":"1448/09/10","g":"17/2/2027","w":"الأربعاء","off":""},{"h":"1448/09/11","g":"18/2/2027","w":"الخميس","off":""}]},{"n":6,"exam":false,"days":[{"h":"1448/09/14","g":"21/2/2027","w":"الأحد","off":"إجازة يوم التأسيس"},{"h":"1448/09/15","g":"22/2/2027","w":"الاثنين","off":"إجازة يوم التأسيس"},{"h":"1448/09/16","g":"23/2/2027","w":"الثلاثاء","off":""},{"h":"1448/09/17","g":"24/2/2027","w":"الأربعاء","off":""},{"h":"1448/09/18","g":"25/2/2027","w":"الخميس","off":""}]},{"n":7,"exam":false,"days":[{"h":"1448/10/06","g":"14/3/2027","w":"الأحد","off":""},{"h":"1448/10/07","g":"15/3/2027","w":"الاثنين","off":""},{"h":"1448/10/08","g":"16/3/2027","w":"الثلاثاء","off":""},{"h":"1448/10/09","g":"17/3/2027","w":"الأربعاء","off":""},{"h":"1448/10/10","g":"18/3/2027","w":"الخميس","off":""}]},{"n":8,"exam":false,"days":[{"h":"1448/10/13","g":"21/3/2027","w":"الأحد","off":""},{"h":"1448/10/14","g":"22/3/2027","w":"الاثنين","off":""},{"h":"1448/10/15","g":"23/3/2027","w":"الثلاثاء","off":""},{"h":"1448/10/16","g":"24/3/2027","w":"الأربعاء","off":""},{"h":"1448/10/17","g":"25/3/2027","w":"الخميس","off":""}]},{"n":9,"exam":false,"days":[{"h":"1448/10/20","g":"28/3/2027","w":"الأحد","off":""},{"h":"1448/10/21","g":"29/3/2027","w":"الاثنين","off":""},{"h":"1448/10/22","g":"30/3/2027","w":"الثلاثاء","off":""},{"h":"1448/10/23","g":"31/3/2027","w":"الأربعاء","off":""},{"h":"1448/10/24","g":"1/4/2027","w":"الخميس","off":""}]},{"n":10,"exam":false,"days":[{"h":"1448/10/27","g":"4/4/2027","w":"الأحد","off":""},{"h":"1448/10/28","g":"5/4/2027","w":"الاثنين","off":""},{"h":"1448/10/29","g":"6/4/2027","w":"الثلاثاء","off":""},{"h":"1448/10/30","g":"7/4/2027","w":"الأربعاء","off":""},{"h":"1448/11/01","g":"8/4/2027","w":"الخميس","off":""}]},{"n":11,"exam":false,"days":[{"h":"1448/11/04","g":"11/4/2027","w":"الأحد","off":""},{"h":"1448/11/05","g":"12/4/2027","w":"الاثنين","off":""},{"h":"1448/11/06","g":"13/4/2027","w":"الثلاثاء","off":""},{"h":"1448/11/07","g":"14/4/2027","w":"الأربعاء","off":""},{"h":"1448/11/08","g":"15/4/2027","w":"الخميس","off":""}]},{"n":12,"exam":false,"days":[{"h":"1448/11/11","g":"18/4/2027","w":"الأحد","off":""},{"h":"1448/11/12","g":"19/4/2027","w":"الاثنين","off":""},{"h":"1448/11/13","g":"20/4/2027","w":"الثلاثاء","off":""},{"h":"1448/11/14","g":"21/4/2027","w":"الأربعاء","off":""},{"h":"1448/11/15","g":"22/4/2027","w":"الخميس","off":""}]},{"n":13,"exam":false,"days":[{"h":"1448/11/18","g":"25/4/2027","w":"الأحد","off":""},{"h":"1448/11/19","g":"26/4/2027","w":"الاثنين","off":""},{"h":"1448/11/20","g":"27/4/2027","w":"الثلاثاء","off":""},{"h":"1448/11/21","g":"28/4/2027","w":"الأربعاء","off":""},{"h":"1448/11/22","g":"29/4/2027","w":"الخميس","off":""}]},{"n":14,"exam":false,"days":[{"h":"1448/12/17","g":"23/5/2027","w":"الأحد","off":""},{"h":"1448/12/18","g":"24/5/2027","w":"الاثنين","off":""},{"h":"1448/12/19","g":"25/5/2027","w":"الثلاثاء","off":""},{"h":"1448/12/20","g":"26/5/2027","w":"الأربعاء","off":""},{"h":"1448/12/21","g":"27/5/2027","w":"الخميس","off":""}]},{"n":15,"exam":false,"days":[{"h":"1448/12/24","g":"30/5/2027","w":"الأحد","off":""},{"h":"1448/12/25","g":"31/5/2027","w":"الاثنين","off":""},{"h":"1448/12/26","g":"1/6/2027","w":"الثلاثاء","off":""},{"h":"1448/12/27","g":"2/6/2027","w":"الأربعاء","off":""},{"h":"1448/12/28","g":"3/6/2027","w":"الخميس","off":""}]},{"n":16,"exam":false,"days":[{"h":"1449/01/01","g":"6/6/2027","w":"الأحد","off":""},{"h":"1449/01/02","g":"7/6/2027","w":"الاثنين","off":""},{"h":"1449/01/03","g":"8/6/2027","w":"الثلاثاء","off":""},{"h":"1449/01/04","g":"9/6/2027","w":"الأربعاء","off":""},{"h":"1449/01/05","g":"10/6/2027","w":"الخميس","off":""}]},{"n":17,"exam":false,"days":[{"h":"1449/01/08","g":"13/6/2027","w":"الأحد","off":""},{"h":"1449/01/09","g":"14/6/2027","w":"الاثنين","off":""},{"h":"1449/01/10","g":"15/6/2027","w":"الثلاثاء","off":""},{"h":"1449/01/11","g":"16/6/2027","w":"الأربعاء","off":""},{"h":"1449/01/12","g":"17/6/2027","w":"الخميس","off":""}]},{"n":18,"exam":false,"days":[{"h":"1449/01/15","g":"20/6/2027","w":"الأحد","off":""},{"h":"1449/01/16","g":"21/6/2027","w":"الاثنين","off":""},{"h":"1449/01/17","g":"22/6/2027","w":"الثلاثاء","off":""},{"h":"1449/01/18","g":"23/6/2027","w":"الأربعاء","off":""},{"h":"1449/01/19","g":"24/6/2027","w":"الخميس","off":""}]},{"n":19,"exam":true,"days":[{"h":"1449/01/22","g":"27/6/2027","w":"الأحد","off":""},{"h":"1449/01/23","g":"28/6/2027","w":"الاثنين","off":""},{"h":"1449/01/24","g":"29/6/2027","w":"الثلاثاء","off":""},{"h":"1449/01/25","g":"30/6/2027","w":"الأربعاء","off":""},{"h":"1449/01/26","g":"1/7/2027","w":"الخميس","off":""}]}],"breaks":{"s1":[[12,"إجازة الخريف","1448/06/10 – 1448/06/18هـ"]],"s2":[[6,"إجازة عيد الفطر","1448/09/19 – 1448/10/05هـ"],[13,"إجازة عيد الأضحى","1448/11/23 – 1448/12/16هـ"]]}},"gen":{"s1":[{"n":1,"exam":false,"days":[{"h":"1448/03/10","g":"23/8/2026","w":"الأحد","off":""},{"h":"1448/03/11","g":"24/8/2026","w":"الاثنين","off":""},{"h":"1448/03/12","g":"25/8/2026","w":"الثلاثاء","off":""},{"h":"1448/03/13","g":"26/8/2026","w":"الأربعاء","off":""},{"h":"1448/03/14","g":"27/8/2026","w":"الخميس","off":""}]},{"n":2,"exam":false,"days":[{"h":"1448/03/17","g":"30/8/2026","w":"الأحد","off":""},{"h":"1448/03/18","g":"31/8/2026","w":"الاثنين","off":""},{"h":"1448/03/19","g":"1/9/2026","w":"الثلاثاء","off":""},{"h":"1448/03/20","g":"2/9/2026","w":"الأربعاء","off":""},{"h":"1448/03/21","g":"3/9/2026","w":"الخميس","off":""}]},{"n":3,"exam":false,"days":[{"h":"1448/03/24","g":"6/9/2026","w":"الأحد","off":""},{"h":"1448/03/25","g":"7/9/2026","w":"الاثنين","off":""},{"h":"1448/03/26","g":"8/9/2026","w":"الثلاثاء","off":""},{"h":"1448/03/27","g":"9/9/2026","w":"الأربعاء","off":""},{"h":"1448/03/28","g":"10/9/2026","w":"الخميس","off":""}]},{"n":4,"exam":false,"days":[{"h":"1448/04/02","g":"13/9/2026","w":"الأحد","off":""},{"h":"1448/04/03","g":"14/9/2026","w":"الاثنين","off":""},{"h":"1448/04/04","g":"15/9/2026","w":"الثلاثاء","off":""},{"h":"1448/04/05","g":"16/9/2026","w":"الأربعاء","off":""},{"h":"1448/04/06","g":"17/9/2026","w":"الخميس","off":""}]},{"n":5,"exam":false,"days":[{"h":"1448/04/09","g":"20/9/2026","w":"الأحد","off":""},{"h":"1448/04/10","g":"21/9/2026","w":"الاثنين","off":""},{"h":"1448/04/11","g":"22/9/2026","w":"الثلاثاء","off":""},{"h":"1448/04/12","g":"23/9/2026","w":"الأربعاء","off":"إجازة اليوم الوطني"},{"h":"1448/04/13","g":"24/9/2026","w":"الخميس","off":"إجازة اليوم الوطني"}]},{"n":6,"exam":false,"days":[{"h":"1448/04/16","g":"27/9/2026","w":"الأحد","off":""},{"h":"1448/04/17","g":"28/9/2026","w":"الاثنين","off":""},{"h":"1448/04/18","g":"29/9/2026","w":"الثلاثاء","off":""},{"h":"1448/04/19","g":"30/9/2026","w":"الأربعاء","off":""},{"h":"1448/04/20","g":"1/10/2026","w":"الخميس","off":""}]},{"n":7,"exam":false,"days":[{"h":"1448/04/23","g":"4/10/2026","w":"الأحد","off":""},{"h":"1448/04/24","g":"5/10/2026","w":"الاثنين","off":""},{"h":"1448/04/25","g":"6/10/2026","w":"الثلاثاء","off":""},{"h":"1448/04/26","g":"7/10/2026","w":"الأربعاء","off":""},{"h":"1448/04/27","g":"8/10/2026","w":"الخميس","off":""}]},{"n":8,"exam":false,"days":[{"h":"1448/04/30","g":"11/10/2026","w":"الأحد","off":""},{"h":"1448/05/01","g":"12/10/2026","w":"الاثنين","off":""},{"h":"1448/05/02","g":"13/10/2026","w":"الثلاثاء","off":""},{"h":"1448/05/03","g":"14/10/2026","w":"الأربعاء","off":""},{"h":"1448/05/04","g":"15/10/2026","w":"الخميس","off":""}]},{"n":9,"exam":false,"days":[{"h":"1448/05/07","g":"18/10/2026","w":"الأحد","off":""},{"h":"1448/05/08","g":"19/10/2026","w":"الاثنين","off":""},{"h":"1448/05/09","g":"20/10/2026","w":"الثلاثاء","off":""},{"h":"1448/05/10","g":"21/10/2026","w":"الأربعاء","off":""},{"h":"1448/05/11","g":"22/10/2026","w":"الخميس","off":""}]},{"n":10,"exam":false,"days":[{"h":"1448/05/14","g":"25/10/2026","w":"الأحد","off":""},{"h":"1448/05/15","g":"26/10/2026","w":"الاثنين","off":""},{"h":"1448/05/16","g":"27/10/2026","w":"الثلاثاء","off":""},{"h":"1448/05/17","g":"28/10/2026","w":"الأربعاء","off":""},{"h":"1448/05/18","g":"29/10/2026","w":"الخميس","off":""}]},{"n":11,"exam":false,"days":[{"h":"1448/05/21","g":"1/11/2026","w":"الأحد","off":""},{"h":"1448/05/22","g":"2/11/2026","w":"الاثنين","off":""},{"h":"1448/05/23","g":"3/11/2026","w":"الثلاثاء","off":""},{"h":"1448/05/24","g":"4/11/2026","w":"الأربعاء","off":""},{"h":"1448/05/25","g":"5/11/2026","w":"الخميس","off":""}]},{"n":12,"exam":false,"days":[{"h":"1448/05/28","g":"8/11/2026","w":"الأحد","off":""},{"h":"1448/05/29","g":"9/11/2026","w":"الاثنين","off":""},{"h":"1448/05/30","g":"10/11/2026","w":"الثلاثاء","off":""},{"h":"1448/06/01","g":"11/11/2026","w":"الأربعاء","off":""},{"h":"1448/06/02","g":"12/11/2026","w":"الخميس","off":""}]},{"n":13,"exam":false,"days":[{"h":"1448/06/05","g":"15/11/2026","w":"الأحد","off":""},{"h":"1448/06/06","g":"16/11/2026","w":"الاثنين","off":""},{"h":"1448/06/07","g":"17/11/2026","w":"الثلاثاء","off":""},{"h":"1448/06/08","g":"18/11/2026","w":"الأربعاء","off":""},{"h":"1448/06/09","g":"19/11/2026","w":"الخميس","off":""}]},{"n":14,"exam":false,"days":[{"h":"1448/06/19","g":"29/11/2026","w":"الأحد","off":""},{"h":"1448/06/20","g":"30/11/2026","w":"الاثنين","off":""},{"h":"1448/06/21","g":"1/12/2026","w":"الثلاثاء","off":""},{"h":"1448/06/22","g":"2/12/2026","w":"الأربعاء","off":""},{"h":"1448/06/23","g":"3/12/2026","w":"الخميس","off":""}]},{"n":15,"exam":false,"days":[{"h":"1448/06/26","g":"6/12/2026","w":"الأحد","off":""},{"h":"1448/06/27","g":"7/12/2026","w":"الاثنين","off":""},{"h":"1448/06/28","g":"8/12/2026","w":"الثلاثاء","off":""},{"h":"1448/06/29","g":"9/12/2026","w":"الأربعاء","off":""},{"h":"1448/07/01","g":"10/12/2026","w":"الخميس","off":""}]},{"n":16,"exam":false,"days":[{"h":"1448/07/04","g":"13/12/2026","w":"الأحد","off":""},{"h":"1448/07/05","g":"14/12/2026","w":"الاثنين","off":""},{"h":"1448/07/06","g":"15/12/2026","w":"الثلاثاء","off":""},{"h":"1448/07/07","g":"16/12/2026","w":"الأربعاء","off":""},{"h":"1448/07/08","g":"17/12/2026","w":"الخميس","off":""}]},{"n":17,"exam":false,"days":[{"h":"1448/07/11","g":"20/12/2026","w":"الأحد","off":""},{"h":"1448/07/12","g":"21/12/2026","w":"الاثنين","off":""},{"h":"1448/07/13","g":"22/12/2026","w":"الثلاثاء","off":""},{"h":"1448/07/14","g":"23/12/2026","w":"الأربعاء","off":""},{"h":"1448/07/15","g":"24/12/2026","w":"الخميس","off":""}]},{"n":18,"exam":false,"days":[{"h":"1448/07/18","g":"27/12/2026","w":"الأحد","off":""},{"h":"1448/07/19","g":"28/12/2026","w":"الاثنين","off":""},{"h":"1448/07/20","g":"29/12/2026","w":"الثلاثاء","off":""},{"h":"1448/07/21","g":"30/12/2026","w":"الأربعاء","off":""},{"h":"1448/07/22","g":"31/12/2026","w":"الخميس","off":""}]},{"n":19,"exam":true,"days":[{"h":"1448/07/25","g":"3/1/2027","w":"الأحد","off":""},{"h":"1448/07/26","g":"4/1/2027","w":"الاثنين","off":""},{"h":"1448/07/27","g":"5/1/2027","w":"الثلاثاء","off":""},{"h":"1448/07/28","g":"6/1/2027","w":"الأربعاء","off":""},{"h":"1448/07/29","g":"7/1/2027","w":"الخميس","off":""}]}],"s2":[{"n":1,"exam":false,"days":[{"h":"1448/08/09","g":"17/1/2027","w":"الأحد","off":""},{"h":"1448/08/10","g":"18/1/2027","w":"الاثنين","off":""},{"h":"1448/08/11","g":"19/1/2027","w":"الثلاثاء","off":""},{"h":"1448/08/12","g":"20/1/2027","w":"الأربعاء","off":""},{"h":"1448/08/13","g":"21/1/2027","w":"الخميس","off":""}]},{"n":2,"exam":false,"days":[{"h":"1448/08/16","g":"24/1/2027","w":"الأحد","off":""},{"h":"1448/08/17","g":"25/1/2027","w":"الاثنين","off":""},{"h":"1448/08/18","g":"26/1/2027","w":"الثلاثاء","off":""},{"h":"1448/08/19","g":"27/1/2027","w":"الأربعاء","off":""},{"h":"1448/08/20","g":"28/1/2027","w":"الخميس","off":""}]},{"n":3,"exam":false,"days":[{"h":"1448/08/23","g":"31/1/2027","w":"الأحد","off":""},{"h":"1448/08/24","g":"1/2/2027","w":"الاثنين","off":""},{"h":"1448/08/25","g":"2/2/2027","w":"الثلاثاء","off":""},{"h":"1448/08/26","g":"3/2/2027","w":"الأربعاء","off":""},{"h":"1448/08/27","g":"4/2/2027","w":"الخميس","off":""}]},{"n":4,"exam":false,"days":[{"h":"1448/08/30","g":"7/2/2027","w":"الأحد","off":""},{"h":"1448/09/01","g":"8/2/2027","w":"الاثنين","off":""},{"h":"1448/09/02","g":"9/2/2027","w":"الثلاثاء","off":""},{"h":"1448/09/03","g":"10/2/2027","w":"الأربعاء","off":""},{"h":"1448/09/04","g":"11/2/2027","w":"الخميس","off":""}]},{"n":5,"exam":false,"days":[{"h":"1448/09/07","g":"14/2/2027","w":"الأحد","off":""},{"h":"1448/09/08","g":"15/2/2027","w":"الاثنين","off":""},{"h":"1448/09/09","g":"16/2/2027","w":"الثلاثاء","off":""},{"h":"1448/09/10","g":"17/2/2027","w":"الأربعاء","off":""},{"h":"1448/09/11","g":"18/2/2027","w":"الخميس","off":""}]},{"n":6,"exam":false,"days":[{"h":"1448/09/14","g":"21/2/2027","w":"الأحد","off":"إجازة يوم التأسيس"},{"h":"1448/09/15","g":"22/2/2027","w":"الاثنين","off":"إجازة يوم التأسيس"},{"h":"1448/09/16","g":"23/2/2027","w":"الثلاثاء","off":""},{"h":"1448/09/17","g":"24/2/2027","w":"الأربعاء","off":""},{"h":"1448/09/18","g":"25/2/2027","w":"الخميس","off":""}]},{"n":7,"exam":false,"days":[{"h":"1448/10/06","g":"14/3/2027","w":"الأحد","off":""},{"h":"1448/10/07","g":"15/3/2027","w":"الاثنين","off":""},{"h":"1448/10/08","g":"16/3/2027","w":"الثلاثاء","off":""},{"h":"1448/10/09","g":"17/3/2027","w":"الأربعاء","off":""},{"h":"1448/10/10","g":"18/3/2027","w":"الخميس","off":""}]},{"n":8,"exam":false,"days":[{"h":"1448/10/13","g":"21/3/2027","w":"الأحد","off":""},{"h":"1448/10/14","g":"22/3/2027","w":"الاثنين","off":""},{"h":"1448/10/15","g":"23/3/2027","w":"الثلاثاء","off":""},{"h":"1448/10/16","g":"24/3/2027","w":"الأربعاء","off":""},{"h":"1448/10/17","g":"25/3/2027","w":"الخميس","off":""}]},{"n":9,"exam":false,"days":[{"h":"1448/10/20","g":"28/3/2027","w":"الأحد","off":""},{"h":"1448/10/21","g":"29/3/2027","w":"الاثنين","off":""},{"h":"1448/10/22","g":"30/3/2027","w":"الثلاثاء","off":""},{"h":"1448/10/23","g":"31/3/2027","w":"الأربعاء","off":""},{"h":"1448/10/24","g":"1/4/2027","w":"الخميس","off":""}]},{"n":10,"exam":false,"days":[{"h":"1448/10/27","g":"4/4/2027","w":"الأحد","off":""},{"h":"1448/10/28","g":"5/4/2027","w":"الاثنين","off":""},{"h":"1448/10/29","g":"6/4/2027","w":"الثلاثاء","off":""},{"h":"1448/10/30","g":"7/4/2027","w":"الأربعاء","off":""},{"h":"1448/11/01","g":"8/4/2027","w":"الخميس","off":""}]},{"n":11,"exam":false,"days":[{"h":"1448/11/04","g":"11/4/2027","w":"الأحد","off":""},{"h":"1448/11/05","g":"12/4/2027","w":"الاثنين","off":""},{"h":"1448/11/06","g":"13/4/2027","w":"الثلاثاء","off":""},{"h":"1448/11/07","g":"14/4/2027","w":"الأربعاء","off":""},{"h":"1448/11/08","g":"15/4/2027","w":"الخميس","off":""}]},{"n":12,"exam":false,"days":[{"h":"1448/11/11","g":"18/4/2027","w":"الأحد","off":""},{"h":"1448/11/12","g":"19/4/2027","w":"الاثنين","off":""},{"h":"1448/11/13","g":"20/4/2027","w":"الثلاثاء","off":""},{"h":"1448/11/14","g":"21/4/2027","w":"الأربعاء","off":""},{"h":"1448/11/15","g":"22/4/2027","w":"الخميس","off":""}]},{"n":13,"exam":false,"days":[{"h":"1448/11/18","g":"25/4/2027","w":"الأحد","off":""},{"h":"1448/11/19","g":"26/4/2027","w":"الاثنين","off":""},{"h":"1448/11/20","g":"27/4/2027","w":"الثلاثاء","off":""},{"h":"1448/11/21","g":"28/4/2027","w":"الأربعاء","off":""},{"h":"1448/11/22","g":"29/4/2027","w":"الخميس","off":""}]},{"n":14,"exam":false,"days":[{"h":"1448/11/25","g":"2/5/2027","w":"الأحد","off":""},{"h":"1448/11/26","g":"3/5/2027","w":"الاثنين","off":""},{"h":"1448/11/27","g":"4/5/2027","w":"الثلاثاء","off":""},{"h":"1448/11/28","g":"5/5/2027","w":"الأربعاء","off":""},{"h":"1448/11/29","g":"6/5/2027","w":"الخميس","off":""}]},{"n":15,"exam":false,"days":[{"h":"1448/12/17","g":"23/5/2027","w":"الأحد","off":""},{"h":"1448/12/18","g":"24/5/2027","w":"الاثنين","off":""},{"h":"1448/12/19","g":"25/5/2027","w":"الثلاثاء","off":""},{"h":"1448/12/20","g":"26/5/2027","w":"الأربعاء","off":""},{"h":"1448/12/21","g":"27/5/2027","w":"الخميس","off":""}]},{"n":16,"exam":false,"days":[{"h":"1448/12/24","g":"30/5/2027","w":"الأحد","off":""},{"h":"1448/12/25","g":"31/5/2027","w":"الاثنين","off":""},{"h":"1448/12/26","g":"1/6/2027","w":"الثلاثاء","off":""},{"h":"1448/12/27","g":"2/6/2027","w":"الأربعاء","off":""},{"h":"1448/12/28","g":"3/6/2027","w":"الخميس","off":""}]},{"n":17,"exam":false,"days":[{"h":"1449/01/01","g":"6/6/2027","w":"الأحد","off":""},{"h":"1449/01/02","g":"7/6/2027","w":"الاثنين","off":""},{"h":"1449/01/03","g":"8/6/2027","w":"الثلاثاء","off":""},{"h":"1449/01/04","g":"9/6/2027","w":"الأربعاء","off":""},{"h":"1449/01/05","g":"10/6/2027","w":"الخميس","off":""}]},{"n":18,"exam":false,"days":[{"h":"1449/01/08","g":"13/6/2027","w":"الأحد","off":""},{"h":"1449/01/09","g":"14/6/2027","w":"الاثنين","off":""},{"h":"1449/01/10","g":"15/6/2027","w":"الثلاثاء","off":""},{"h":"1449/01/11","g":"16/6/2027","w":"الأربعاء","off":""},{"h":"1449/01/12","g":"17/6/2027","w":"الخميس","off":""}]},{"n":19,"exam":true,"days":[{"h":"1449/01/15","g":"20/6/2027","w":"الأحد","off":""},{"h":"1449/01/16","g":"21/6/2027","w":"الاثنين","off":""},{"h":"1449/01/17","g":"22/6/2027","w":"الثلاثاء","off":""},{"h":"1449/01/18","g":"23/6/2027","w":"الأربعاء","off":""},{"h":"1449/01/19","g":"24/6/2027","w":"الخميس","off":""}]}],"breaks":{"s1":[[13,"إجازة الخريف","1448/06/10 – 1448/06/18هـ"]],"s2":[[6,"إجازة عيد الفطر","1448/09/19 – 1448/10/05هـ"],[14,"إجازة عيد الأضحى","1448/12/01 – 1448/12/16هـ"]]}}};
+const CALN={west:"تقويم مكة المكرمة والمدينة المنورة وجدة والطائف",gen:"تقويم جميع المناطق ماعدا الإدارات المستثناة"};
+const SEMN={s1:"الأول",s2:"الثاني"};
+function calIdx(){
+  const c=CAL[S.info.iCal];if(!c)return null;
+  if(calIdx.k===S.info.iCal)return calIdx.m;
+  const m={};for(const s of ["s1","s2"])c[s].forEach(wk=>wk.days.forEach(d=>{m[d.h]={...d,sem:s,n:wk.n,exam:wk.exam}}));
+  calIdx.k=S.info.iCal;calIdx.m=m;return m;
+}
+function dayInfo(str){
+  const a=parseH(str);if(!a)return{day:"",week:"",date:"",term:"",g:""};
+  const hs=fmtH(a),x=(calIdx()||{})[hs];
+  if(x)return{day:x.w,week:ORD[x.n-1],date:`${p2(a[2])} / ${p2(a[1])} / ${a[0]}هـ`,term:SEMN[x.sem],g:x.g,n:x.n,off:x.off,exam:x.exam};
+  const dt=h2g(a);
+  return{day:dt?WD(dt):"",week:"",date:`${p2(a[2])} / ${p2(a[1])} / ${a[0]}هـ`,term:"",g:dt?`${dt.getDate()}/${dt.getMonth()+1}/${dt.getFullYear()}`:""};
+}
+function dateCell(id,f){
+  const v=(S.edits[id]||{})[f];
+  if(!v)return `<button class="dpk empty" data-dp="${id}" data-f="${f}" data-empty="1">اختر التاريخ</button>`;
+  const d=dayInfo(v);
+  return `<button class="dpk" data-dp="${id}" data-f="${f}">${esc(v)}هـ<small>${d.day}${d.week?"، الأسبوع "+d.week:""}</small>${d.g?`<small>${d.g}م</small>`:""}</button>`;
+}
+// ---------- week/day picker ----------
+let DP=null;
+function openPicker(id,f,store){
+  store=store||"edits";
+  const E=S.edits[id]||{},cur=store==="cards"?(S.cards[id]||{})[f+"_h"]:E[f],ref=cur||(f==="end"?E.start:null)||(store==="cards"?E.end:null);
+  let sem="s1",open=null;
+  const idx=calIdx(),x=ref&&idx&&idx[ref];
+  if(x){sem=x.sem;open=x.n}
+  else if(S.info.iCal){const s2=CAL[S.info.iCal].s2[0].days[0].h;if(key(parse(fmtH(T)))>=key(parse(s2)))sem="s2"}
+  DP={id,f,sem,open,store};drawPicker();
+}
+function drawPicker(){
+  let m=$("#dpModal");
+  if(!m){m=document.createElement("div");m.id="dpModal";m.className="modal noprint";m.addEventListener("click",pickClick);document.body.appendChild(m)}
+  const c=D.find(x=>x.id===DP.id),lab={start:"بداية التنفيذ",end:"نهاية التنفيذ",tDate:"تاريخ توقيع المعلم المنفذ",raedDate:"تاريخ توقيع رائد النشاط"}[DP.f];
+  if(!S.info.iCal){
+    m.innerHTML=`<div class="mbox"><div class="mhead"><h3>اختر التقويم الدراسي المعتمد</h3><p>يختلف التقويمان في بداية الدراسة وإجازة عيد الأضحى ونهاية العام.</p></div>
+    <div class="mbody"><div class="calpick">
+      <button data-cal="west"><b>مكة المكرمة، المدينة المنورة، جدة، الطائف</b><span>بداية الدراسة 1448/03/17هـ (30/8/2026م)</span></button>
+      <button data-cal="gen"><b>جميع المناطق ماعدا الإدارات المستثناة</b><span>بداية الدراسة 1448/03/10هـ (23/8/2026م)</span></button>
+    </div></div><div class="mfoot"><span></span><button class="btn" data-x="close">إغلاق</button></div></div>`;return;
+  }
+  const C=CAL[S.info.iCal],weeks=C[DP.sem],brk=C.breaks[DP.sem],cur=DP.store==="cards"?(S.cards[DP.id]||{})[DP.f+"_h"]:(S.edits[DP.id]||{})[DP.f];
+  const startV=DP.store==="edits"&&DP.f==="end"?(S.edits[DP.id]||{}).start:null;
+  const rng=wk=>{const a=wk.days[0],b=wk.days[4];return `<bdi>${a.h.slice(5)}</bdi> – <bdi>${b.h.slice(5)}</bdi>هـ، <bdi>${a.g.slice(0,-5)}</bdi> – <bdi>${b.g.slice(0,-5)}</bdi>م`};
+  m.innerHTML=`<div class="mbox" role="dialog" aria-label="اختيار ${lab}">
+    <div class="mhead"><h3>${lab}: ${esc(c.n)}</h3><p>${CALN[S.info.iCal]}</p>
+      <div class="mtabs"><button class="btn" data-sem="s1" aria-pressed="${DP.sem==="s1"}">الفصل الدراسي الأول</button><button class="btn" data-sem="s2" aria-pressed="${DP.sem==="s2"}">الفصل الدراسي الثاني</button></div></div>
+    <div class="mbody">${weeks.map(wk=>{
+      const isOpen=DP.open===wk.n,has=cur&&wk.days.some(d=>d.h===cur);
+      const b=(brk.find(x=>x[0]===wk.n));
+      return `<div class="wk ${has?"cur":""}"><button data-wk="${wk.n}" aria-expanded="${isOpen}"><b>الأسبوع ${ORD[wk.n-1]}${wk.exam?`<span class="etag">اختبارات نهاية الفصل</span>`:""}</b><span>${rng(wk)}</span></button>
+      ${isOpen?`<div class="days">${wk.days.map(d=>{const before=startV&&key(parse(d.h))<key(parse(startV));return `<button class="day ${d.h===cur?"on":""}" data-day="${d.h}" ${d.off||before?"disabled":""}><b>${d.w}</b><span><bdi>${d.h}</bdi>هـ <em><bdi>${d.g}</bdi>م</em></span><em>${d.off||(before?"قبل البداية":"")}</em></button>`}).join("")}</div>`:""}</div>
+      ${b?`<div class="brk">${b[1]}: ${b[2]}</div>`:""}`}).join("")}</div>
+    <div class="mfoot"><button class="btn" data-x="clear">مسح التاريخ</button><button class="btn" data-x="close">إغلاق</button></div></div>`;
+  const o=m.querySelector('.wk button[aria-expanded="true"]');if(o)o.scrollIntoView({block:"center"});
+}
+function refreshViews(){renderPlan();if(!$("#cardView").hidden)renderCards()}
+function closePicker(){const m=$("#dpModal");if(m)m.remove();DP=null}
+function pickClick(e){
+  const t=e.target.closest("button");
+  if(!t){if(e.target.id==="dpModal")closePicker();return}
+  if(t.dataset.cal){S.info.iCal=t.dataset.cal;$("#iCal").value=t.dataset.cal;save();drawPicker();return}
+  if(t.dataset.sem){DP.sem=t.dataset.sem;DP.open=null;drawPicker();return}
+  if(t.dataset.wk){const n=+t.dataset.wk;DP.open=DP.open===n?null:n;drawPicker();return}
+  if(t.dataset.day){
+    if(DP.store==="cards"){const a=parseH(t.dataset.day);S.cards[DP.id]={...(S.cards[DP.id]||{}),[DP.f]:`${p2(a[2])} / ${p2(a[1])} / ${a[0]}هـ`,[DP.f+"_h"]:t.dataset.day};save();closePicker();refreshViews();return}
+    const E=S.edits[DP.id]={...(S.edits[DP.id]||{}),[DP.f]:t.dataset.day};
+    if(DP.f==="start"&&E.end&&key(parse(E.end))<key(parse(E.start))){delete E.end;toast("حُذف تاريخ النهاية لأنه قبل البداية")}
+    save();closePicker();refreshViews();return;
+  }
+  if(t.dataset.x==="clear"){if(DP.store==="cards"){if(S.cards[DP.id]){delete S.cards[DP.id][DP.f];delete S.cards[DP.id][DP.f+"_h"]}}else if(S.edits[DP.id])delete S.edits[DP.id][DP.f];save();closePicker();refreshViews();return}
+  if(t.dataset.x==="close")closePicker();
+}
+addEventListener("keydown",e=>{if(e.key==="Escape"&&DP)closePicker()});
+
+// ---------- execution card ----------
+S.cards=S.cards||{};
+function autoCard(c){
+  const E=S.edits[c.id]||{},I=S.info,s=dayInfo(E.start),e=dayInfo(E.end);
+  return{school:I.iSchool||"",name:c.n,dom:DOMS[c.dom].n,sessions:"",term:s.term||I.iTerm||"",
+    s_day:s.day,s_week:s.week,s_date:s.date,e_day:e.day,e_week:e.week,e_date:e.date,
+    grade:c.grades,teacher:E.resp||"",participants:E.count||"",winners:"",qualified:"",prizes:"",parents:"",disabled:"",
+    partnersN:"",partners:"",outcomes:"",notes:"",raedName:I.iRaed||"",raedDate:"",tName:E.resp||"",tDate:""};
+}
+function cardHTML(c){
+  const A=autoCard(c),O=S.cards[c.id]||{};
+  const f=(k,inl)=>{const ov=O[k]!==undefined,v=ov?O[k]:A[k];return `<span class="ce${inl?" inl":""}${!ov&&v?" auto":""}" contenteditable="true" data-id="${c.id}" data-k="${k}">${esc(v)}</span>`};
+  const dateRow=(lab,p)=>{const fld=p==="s"?"start":"end",v=k=>esc(A[p+"_"+k]),cl=`class="sm dpc" data-cdp="${c.id}" data-f="${fld}" title="اضغط لاختيار التاريخ من التقويم"`,
+    empty=!A[p+"_date"];
+    return `<tr><td class="lb">${lab}</td><td ${cl}>اليوم: <span class="cv">${v("day")}</span></td><td ${cl} colspan="2">الأسبوع: <span class="cv">${v("week")}</span></td><td ${cl} colspan="2">التاريخ: <span class="cv">${empty?'<span class="pickhint">اضغط للاختيار</span>':v("date")}</span></td></tr>`};
+  const sd=k=>{const val=O[k]||"";return `<button class="sdp${val?"":" empty"}" data-sdp="${c.id}" data-k="${k}">${val?esc(val):'<span class="pickhint">اختر التاريخ</span>'}</button>`};
+  const one=(lab,k)=>`<tr><td class="lb">${lab}</td><td colspan="5">${f(k)}</td></tr>`;
+  const pair=(l1,k1,l2,k2)=>`<tr><td class="lb">${l1}</td><td colspan="2">${f(k1)}</td><td class="sl" colspan="2">${l2}</td><td>${f(k2)}</td></tr>`;
+  return `<div class="card">
+    <div class="cd-logo">${S.info.logo?`<img src="${S.info.logo}" alt="" style="max-width:30mm;max-height:22mm">`:`<b>وزارة التعليم</b><span>Ministry of Education</span>`}</div>
+    <div class="cd-title">بطاقة تنفيذ مسابقة نشاط طلابي *</div>
+    <table class="ct">
+      <colgroup><col style="width:46.86%"><col style="width:12.94%"><col style="width:4.77%"><col style="width:12.67%"><col style="width:7.17%"><col style="width:15.59%"></colgroup>
+      <tbody>
+      <tr style="height:13.9mm"><td class="lb">اسم المدرسة</td><td colspan="5">${f("school")}</td></tr>
+      <tr style="height:13.9mm"><td class="lb">اسم المسابقة</td><td colspan="5">${f("name")}</td></tr>
+      ${one("المجال","dom")}
+      ${one("عدد الحصص للإعداد والتأهيل للمسابقة","sessions")}
+      ${one("الفصل الدراسي","term")}
+      ${dateRow("بداية التنفيذ","s")}
+      ${dateRow("نهاية التنفيذ","e")}
+      <tr style="height:10.3mm"><td class="lb">الصف</td><td colspan="5">${f("grade")}</td></tr>
+      <tr style="height:11.3mm"><td class="lb">المعلم/ة المنفذ/ة</td><td colspan="5">${f("teacher")}</td></tr>
+      ${pair("عدد الطلبة المشاركين في المسابقة","participants","عدد الفائزين","winners").replace("<tr>",'<tr style="height:11.3mm">')}
+      ${pair("عدد الطلبة المتأهلين للمرحلة المقبلة","qualified","عدد الجوائز","prizes").replace("<tr>",'<tr style="height:15.7mm">')}
+      ${pair("عدد أولياء الأمور المشاركين في المسابقة","parents","عدد الطلبة المشاركين من ذوي الإعاقة","disabled").replace("<tr>",'<tr style="height:15.4mm">')}
+      ${pair("عدد الشراكات المجتمعية","partnersN","أسماء الشراكات المجتمعية","partners").replace("<tr>",'<tr style="height:15.7mm">')}
+      <tr style="height:13.1mm"><td class="lb">نواتج المسابقة</td><td colspan="5">${f("outcomes")}</td></tr>
+      <tr style="height:13.1mm"><td class="lb">ملاحظات</td><td colspan="5">${f("notes")}</td></tr>
+      </tbody>
+    </table>
+    <div class="cd-sign">
+      <div><b>المعلم/ة المنفذ/ة</b>الاسم: ${f("tName",1)}<br>التاريخ: ${sd("tDate")}<br>التوقيع:</div>
+      <div><b>رائد/ة النشاط</b>الاسم: ${f("raedName",1)}<br>التاريخ: ${sd("raedDate")}<br>التوقيع:</div>
+    </div>
+    <p class="cd-note">يتم تعبئة هذه البطاقة عند استكمال الحصص المخصصة لإعداد وتأهيل الطلاب للمسابقة وفق ما ورد في دليل الخطط الدراسية /الإصدار السادس.</p>
+    <div class="cd-foot"></div>
+  </div>`;
+}
+function planComps(){return D.filter(c=>S.sel.includes(c.id)).sort((a,b)=>ORDER.indexOf(a.dom)-ORDER.indexOf(b.dom)||key(parse(a.reg[0].s))-key(parse(b.reg[0].s)))}
+function renderCards(){
+  const list=planComps();
+  if(!list.length){$("#cSel").innerHTML="";$("#cards").innerHTML=`<div class="panel noplan">أضف مسابقات إلى الخطة أولًا، ثم اختر المسابقة هنا لإنشاء بطاقتها.</div>`;return}
+  if(S.cardSel!=="__all"&&!list.some(c=>c.id===S.cardSel))S.cardSel=list[0].id;
+  $("#cSel").innerHTML=`<option value="__all">كل مسابقات الخطة (${list.length} بطاقات)</option>`+list.map(c=>`<option value="${c.id}" ${S.cardSel===c.id?"selected":""}>${esc(c.n)}</option>`).join("");
+  if(S.cardSel==="__all")$("#cSel").value="__all";
+  const show=S.cardSel==="__all"?list:list.filter(c=>c.id===S.cardSel);
+  $("#cards").innerHTML=show.map(cardHTML).join("");
+  fitCards();
+}
+function fitCards(){const w=$("#cards").clientWidth||794;document.querySelectorAll(".card").forEach(c=>c.style.zoom=Math.min(1,(w-4)/794))}
+addEventListener("resize",fitCards);
+$("#cSel").onchange=e=>{S.cardSel=e.target.value;save();renderCards()};
+$("#cards").addEventListener("click",e=>{
+  const a=e.target.closest("[data-cdp]");if(a)return openPicker(a.dataset.cdp,a.dataset.f,"edits");
+  const b=e.target.closest("[data-sdp]");if(b)return openPicker(b.dataset.sdp,b.dataset.k,"cards");
+});
+$("#cards").addEventListener("input",e=>{const el=e.target.closest(".ce");if(!el)return;const {id,k}=el.dataset;S.cards[id]={...(S.cards[id]||{}),[k]:el.textContent.trim()};el.classList.remove("auto");save()});
+$("#cReset").onclick=()=>{const ids=S.cardSel==="__all"?S.sel:[S.cardSel];if(!confirm("حذف تعديلاتك اليدوية على البطاقة وإعادة تعبئتها من الخطة؟"))return;ids.forEach(id=>delete S.cards[id]);save();renderCards();toast("أُعيدت تعبئة البطاقة")};
+
+// ---------- PDF export (works inside Claude and on GitHub Pages) ----------
+const DLP=(window.claude&&typeof window.claude.use==="function")?window.claude.use("downloads").catch(()=>null):Promise.resolve(null);
+const loadJS=src=>new Promise((ok,no)=>{if(document.querySelector(`script[src="${src}"]`))return ok();const s=document.createElement("script");s.src=src;s.onload=ok;s.onerror=()=>no(new Error("load"));document.head.appendChild(s)});
+async function libs(){
+  await loadJS("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js");
+  await loadJS("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js");
+}
+function busy(on,msg){let b=$("#busy");if(on){if(!b){b=document.createElement("div");b.id="busy";b.className="busy";document.body.appendChild(b)}b.textContent=msg||"جارٍ تجهيز الملف…"}else if(b)b.remove()}
+async function snap(node,widthPx){
+  const box=document.createElement("div");box.className="shot";box.style.width=widthPx+"px";
+  const cl=node.cloneNode(true);cl.style.zoom=1;
+  cl.querySelectorAll(".noprint").forEach(e=>e.remove());
+  cl.querySelectorAll("[data-ph]").forEach(e=>e.removeAttribute("data-ph"));
+  cl.querySelectorAll(".ce.auto").forEach(e=>e.classList.remove("auto"));
+  cl.querySelectorAll(".dpk").forEach(b=>{b.classList.add("flat");if(b.dataset.empty)b.textContent=""});
+  cl.querySelectorAll(".pickhint").forEach(e=>e.remove());
+  cl.querySelectorAll(".sdp").forEach(e=>e.style.border="0");
+  cl.querySelectorAll(".dpc .cv").forEach(e=>e.style.color="#003845");
+  box.appendChild(cl);document.body.appendChild(box);
+  try{if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+    return await html2canvas(cl,{scale:2,backgroundColor:"#ffffff",useCORS:true,logging:false,windowWidth:widthPx});}
+  finally{box.remove()}
+}
+async function deliver(pdf,name){
+  const blob=pdf.output("blob");
+  const dl=await DLP;
+  if(dl){
+    try{await dl.save({filename:name,data:blob});toast("تم حفظ الملف");}
+    catch(e){if(e&&e.code==="declined")toast("أُلغي الحفظ");else toast("تعذّر الحفظ هنا، جرّب زر الطباعة");}
+    return;
+  }
+  const url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),60000);toast("تم حفظ الملف");
+}
+const safeName=s=>String(s||"").replace(/[\\/:*?"<>|]/g,"").trim().slice(0,80);
+$("#pdfPlan").onclick=async()=>{
+  if(!S.sel.length)return toast("أضف مسابقات إلى الخطة أولًا");
+  busy(true,"جارٍ تجهيز الخطة…");
+  try{
+    await libs();renderPlan();
+    const cv=await snap($("#sheet"),1123);
+    const {jsPDF}=window.jspdf,pdf=new jsPDF({orientation:"landscape",unit:"mm",format:"a4"});
+    const W=277,H=190,M=10,pxPerMm=cv.width/W,pageH=Math.floor(H*pxPerMm);
+    for(let y=0,i=0;y<cv.height;y+=pageH,i++){
+      const h=Math.min(pageH,cv.height-y),pc=document.createElement("canvas");pc.width=cv.width;pc.height=h;
+      pc.getContext("2d").drawImage(cv,0,y,cv.width,h,0,0,cv.width,h);
+      if(i)pdf.addPage();pdf.addImage(pc.toDataURL("image/jpeg",.92),"JPEG",M,M,W,h/pxPerMm);
+    }
+    await deliver(pdf,`خطة تنفيذ المسابقات ${safeName(S.info.iSchool)} 1448.pdf`.replace(/\s+/g," "));
+  }catch(e){toast("تعذّر إنشاء PDF، تحقق من الاتصال بالإنترنت")}
+  finally{busy(false)}
+};
+$("#pdfCard").onclick=async()=>{
+  const cards=[...document.querySelectorAll("#cards .card")];
+  if(!cards.length)return toast("لا توجد بطاقة لحفظها");
+  busy(true,cards.length>1?`جارٍ تجهيز ${cards.length} بطاقات…`:"جارٍ تجهيز البطاقة…");
+  try{
+    await libs();
+    const {jsPDF}=window.jspdf,pdf=new jsPDF({orientation:"portrait",unit:"mm",format:"a4"});
+    for(let i=0;i<cards.length;i++){
+      const cv=await snap(cards[i],794);
+      if(i)pdf.addPage();pdf.addImage(cv.toDataURL("image/jpeg",.92),"JPEG",0,0,210,297);
+    }
+    const one=S.cardSel!=="__all"&&D.find(c=>c.id===S.cardSel);
+    await deliver(pdf,one?`بطاقة تنفيذ ${safeName(one.n)}.pdf`:"بطاقات تنفيذ المسابقات 1448.pdf");
+  }catch(e){toast("تعذّر إنشاء PDF، تحقق من الاتصال بالإنترنت")}
+  finally{busy(false)}
+};
+$("#cPrint").onclick=()=>{document.body.dataset.p="card";document.querySelectorAll(".card").forEach(c=>c.style.zoom=1);window.print();fitCards()};
+$("#clearSel").onclick=()=>{if(!S.sel.length)return;if(confirm("إزالة كل المسابقات من الخطة؟")){S.sel=[];save();renderPlan();render();toast("أُفرغت الخطة")}};
+
+render();
+</script>
+</body>
+</html>
