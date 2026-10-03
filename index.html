@@ -1010,29 +1010,50 @@ $("#cPrint").onclick=async()=>{
   // طباعة البطاقة عبر ملف PDF (نفس ناتج زر الحفظ) لضمان صفحة A4 واحدة على كل الأجهزة
   const cards=[...document.querySelectorAll("#cards .card")];
   if(!cards.length)return toast("لا توجد بطاقة لطباعتها");
-  let w=null;try{w=window.open("","_blank")}catch(e){}
-  if(w)try{w.document.write('<meta name="viewport" content="width=device-width"><p dir="rtl" style="font:16px sans-serif;padding:24px">جارٍ تجهيز البطاقة للطباعة…</p>')}catch(e){}
+  const isIOS=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+  const one=S.cardSel!=="__all"&&D.find(c=>c.id===S.cardSel);
+  const name=one?`بطاقة تنفيذ ${safeName(one.n)}.pdf`:"بطاقات تنفيذ المسابقات 1448.pdf";
+  // على الكمبيوتر: نافذة جديدة تُفتح فورًا ثم يوضع فيها الملف. على الآيفون: لا نوافذ، نستخدم قائمة المشاركة
+  let w=null;
+  if(!isIOS){try{w=window.open("","_blank")}catch(e){}
+    if(w)try{w.document.write('<meta name="viewport" content="width=device-width"><p dir="rtl" style="font:16px sans-serif;padding:24px">جارٍ تجهيز البطاقة للطباعة…</p>')}catch(e){}}
   busy(true,cards.length>1?`جارٍ تجهيز ${cards.length} بطاقات للطباعة…`:"جارٍ تجهيز البطاقة للطباعة…");
+  let pdf=null;
   try{
     await libs();
-    const {jsPDF}=window.jspdf,pdf=new jsPDF({orientation:"portrait",unit:"mm",format:"a4"});
+    const {jsPDF}=window.jspdf;pdf=new jsPDF({orientation:"portrait",unit:"mm",format:"a4"});
     for(let i=0;i<cards.length;i++){
       const cv=await snap(cards[i],794);
       if(i)pdf.addPage();pdf.addImage(cv.toDataURL("image/jpeg",.92),"JPEG",0,0,210,297);
     }
-    const isIOS=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
-    if(w&&!w.closed){
-      if(!isIOS)pdf.autoPrint();
-      const url=URL.createObjectURL(pdf.output("blob"));w.location.href=url;setTimeout(()=>URL.revokeObjectURL(url),600000);
-      toast(isIOS?"فُتحت البطاقة، اطبعها من زر المشاركة ثم «طباعة»":"فُتحت البطاقة، إن لم تظهر نافذة الطباعة فاطبع منها");
-    }else{
-      const one=S.cardSel!=="__all"&&D.find(c=>c.id===S.cardSel);
-      await deliver(pdf,one?`بطاقة تنفيذ ${safeName(one.n)}.pdf`:"بطاقات تنفيذ المسابقات 1448.pdf");
-      toast("تعذّر فتح نافذة الطباعة، فحُفظت البطاقة؛ اطبعها من الملف المحفوظ");
-    }
-  }catch(e){if(w&&!w.closed)w.close();toast("تعذّر إنشاء البطاقة، تحقق من الاتصال بالإنترنت")}
-  finally{busy(false)}
+  }catch(e){busy(false);if(w&&!w.closed)w.close();return toast("تعذّر إنشاء البطاقة، تحقق من الاتصال بالإنترنت")}
+  busy(false);
+  if(isIOS){
+    let file=null;try{file=new File([pdf.output("blob")],name,{type:"application/pdf"})}catch(e){}
+    if(file&&navigator.canShare&&navigator.canShare({files:[file]}))return iosShare(file,pdf,name);
+    await deliver(pdf,name);return toast("حُفظت البطاقة؛ افتحها من التنزيلات واطبعها من زر المشاركة");
+  }
+  if(w&&!w.closed){
+    pdf.autoPrint();
+    const url=URL.createObjectURL(pdf.output("blob"));w.location.href=url;setTimeout(()=>URL.revokeObjectURL(url),600000);
+    toast("فُتحت البطاقة، إن لم تظهر نافذة الطباعة فاطبع منها");
+  }else{
+    await deliver(pdf,name);toast("تعذّر فتح نافذة الطباعة، فحُفظت البطاقة؛ اطبعها من الملف المحفوظ");
+  }
 };
+// الآيفون: قائمة المشاركة تحتاج ضغطة جديدة من المستخدم، فنعرض زرًا بعد تجهيز الملف
+function iosShare(file,pdf,name){
+  const m=document.createElement("div");m.className="modal noprint";m.id="shareModal";
+  m.innerHTML=`<div class="mbox"><div class="mhead"><h3>البطاقة جاهزة للطباعة</h3><p>اضغط «مشاركة»، ثم اختر «طباعة» من القائمة.</p></div><div class="mfoot"><button class="btn" id="shareX">إغلاق</button><button class="btn primary" id="shareGo">مشاركة / طباعة</button></div></div>`;
+  document.body.appendChild(m);
+  const close=()=>m.remove();
+  m.addEventListener("click",e=>{if(e.target===m)close()});
+  $("#shareX").onclick=close;
+  $("#shareGo").onclick=async()=>{
+    try{await navigator.share({files:[file],title:name});close()}
+    catch(e){if(e&&e.name==="AbortError")return;close();await deliver(pdf,name);toast("حُفظت البطاقة؛ افتحها من التنزيلات واطبعها من زر المشاركة")}
+  };
+}
 $("#clearSel").onclick=()=>{if(!S.sel.length)return;if(confirm("إزالة كل المسابقات من الخطة؟")){S.sel=[];save();renderPlan();render();toast("أُفرغت الخطة")}};
 
 render();
